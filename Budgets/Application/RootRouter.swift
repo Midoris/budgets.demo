@@ -15,14 +15,14 @@ protocol RootRouterProtocol {
 class RootRouter: RootRouterProtocol {
     
     func presentRootView(in window: UIWindow?) {
-//        let router = FilesScreenBuilder().setupModule()
-//        router.presentView(container: window)
         
         let tabBarController = UITabBarController()
         
-        let favoritesVC = ViewController()
-        favoritesVC.title = "Favorites"
-        favoritesVC.view.backgroundColor = UIColor.orange
+        let budgetsRouter = BudgetsScreenBuilder().setupModule()
+        let budgetsController = budgetsRouter.viewController ?? UIViewController()
+        let budgetsNavController = UINavigationController(rootViewController: budgetsController)
+        
+        
         let downloadsVC = ViewController()
         downloadsVC.title = "Downloads"
         downloadsVC.view.backgroundColor = UIColor.blue
@@ -30,15 +30,12 @@ class RootRouter: RootRouterProtocol {
         historyVC.title = "History"
         historyVC.view.backgroundColor = UIColor.cyan
         
-        favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         downloadsVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         historyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         
-        let controllers = [favoritesVC, downloadsVC, historyVC]
+        let controllers = [budgetsNavController, UINavigationController(rootViewController: downloadsVC), UINavigationController(rootViewController: historyVC)]
         
         tabBarController.viewControllers = controllers
-        
-        tabBarController.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
         
         window?.rootViewController = tabBarController
     }

@@ -15,6 +15,12 @@
 		79811D7821E32BA7006E6129 /* BudgetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D7721E32BA7006E6129 /* BudgetsUITests.swift */; };
 		79811D8C21E482C1006E6129 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D8B21E482C1006E6129 /* Budget.swift */; };
 		79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D8D21E5BFEC006E6129 /* RootRouter.swift */; };
+		79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9721E5CF91006E6129 /* BudgetsScreenViewController.swift */; };
+		79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9921E5D08E006E6129 /* BudgetsScreenPresenter.swift */; };
+		79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9B21E5D16D006E6129 /* BudgetsScreenInteractor.swift */; };
+		79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9D21E5D1EB006E6129 /* BudgetsScreenRouter.swift */; };
+		79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */; };
+		79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		79811D7921E32BA7006E6129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79811D8B21E482C1006E6129 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		79811D8D21E5BFEC006E6129 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		79811D9721E5CF91006E6129 /* BudgetsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenViewController.swift; sourceTree = "<group>"; };
+		79811D9921E5D08E006E6129 /* BudgetsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenPresenter.swift; sourceTree = "<group>"; };
+		79811D9B21E5D16D006E6129 /* BudgetsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenInteractor.swift; sourceTree = "<group>"; };
+		79811D9D21E5D1EB006E6129 /* BudgetsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenRouter.swift; sourceTree = "<group>"; };
+		79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenBuilder.swift; sourceTree = "<group>"; };
+		79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetsScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		79811D8921E48261006E6129 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				79811D9121E5CE95006E6129 /* BudgetsScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -166,6 +179,59 @@
 				79811D8B21E482C1006E6129 /* Budget.swift */,
 			);
 			path = Budget;
+			sourceTree = "<group>";
+		};
+		79811D9121E5CE95006E6129 /* BudgetsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9221E5CEF0006E6129 /* View */,
+				79811D9321E5CEF9006E6129 /* Presenter */,
+				79811D9421E5CF03006E6129 /* Interactor */,
+				79811D9521E5CF2E006E6129 /* Router */,
+				79811D9621E5CF3F006E6129 /* Builder */,
+			);
+			path = BudgetsScreen;
+			sourceTree = "<group>";
+		};
+		79811D9221E5CEF0006E6129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9721E5CF91006E6129 /* BudgetsScreenViewController.swift */,
+				79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		79811D9321E5CEF9006E6129 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9921E5D08E006E6129 /* BudgetsScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		79811D9421E5CF03006E6129 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9B21E5D16D006E6129 /* BudgetsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		79811D9521E5CF2E006E6129 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9D21E5D1EB006E6129 /* BudgetsScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		79811D9621E5CF3F006E6129 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */,
 				79811D6221E32BA7006E6129 /* LaunchScreen.storyboard in Resources */,
 				79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */,
 			);
@@ -298,9 +365,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
+				79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
+				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
+				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
 				79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */,
+				79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

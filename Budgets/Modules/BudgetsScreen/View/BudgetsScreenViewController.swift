@@ -10,7 +10,9 @@ import UIKit
 
 class BudgetsScreenViewController: UIViewController {
 
-    weak var presenter: BudgetsScreenPresenterInput?
+    
+    @IBOutlet weak var tableView: BudgetsTableView!
+    var presenter: BudgetsScreenPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +22,16 @@ class BudgetsScreenViewController: UIViewController {
     
     private func initialViewSetup() {
         prepareViewForTabBar()
+        setupTableView()
     }
     
     private func prepareViewForTabBar() {
         self.title = "Budgets"
         self.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.bookmarks, tag: 0)
+    }
+    
+    private func setupTableView() {
+        self.tableView.presenter = self.presenter
     }
 
 }
@@ -35,12 +42,14 @@ protocol BudgetsScreenPresenterOutput: class {
 }
 
 enum BudgetsScreenPresenterCommand {
-
+    case updateTable(with: [Budget])
 }
 
 extension BudgetsScreenViewController: BudgetsScreenPresenterOutput {
     
     func handle(command: BudgetsScreenPresenterCommand) {
-
+        switch command {
+        case .updateTable(let budgets): self.tableView.budgets = budgets
+        }
     }
 }

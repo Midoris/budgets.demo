@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class BudgetsScreenPresenter {
     weak var view: BudgetsScreenPresenterOutput?
     let interactor: BudgetsScreenInteractorInput
@@ -40,13 +38,20 @@ enum BudgetsScreenVCEvent {
 extension BudgetsScreenPresenter: BudgetsScreenPresenterInput {
     func handle(event: BudgetsScreenVCEvent) {
         switch event {
-        case .viewDidLoad: self.handleViewDidLoad()
+        case .viewDidLoad:
+            self.handleViewDidLoad()
         }
     }
 }
 
 extension BudgetsScreenPresenter {
+    
     fileprivate func handleViewDidLoad() {
+        interactor.handle(command: .getBudgets(completion: handle))
+    }
+    
+    fileprivate func handle(budgets: [Budget]) {
+        self.view?.handle(command: .updateTable(with: budgets))
     }
     
 }

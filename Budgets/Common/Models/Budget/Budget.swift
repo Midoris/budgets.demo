@@ -14,19 +14,27 @@ struct Budget {
     let month: String
     let incomeFunds: [Fund]
     let expensesFunds: [Fund]
+    let currency: String
 }
 
 struct Fund {
     let name: String
-    let amound: Double
+    let amount: Double
     let type: FundType
     let entries: [FundEntry]
     //let imageName: String
 }
 
+extension Fund {
+    var balance: Double {
+        let allChanges = entries.map { $0.amount }.reduce(0, +)
+        return amount + allChanges
+    }
+}
+
 struct FundEntry {
     let date: Date
-    let amound: Double
+    let amount: Double
     let description: String
 }
 

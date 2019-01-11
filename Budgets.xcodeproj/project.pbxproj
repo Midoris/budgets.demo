@@ -21,6 +21,13 @@
 		79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9D21E5D1EB006E6129 /* BudgetsScreenRouter.swift */; };
 		79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */; };
 		79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */; };
+		79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DA421E71352006E6129 /* BudgetsTableView.swift */; };
+		79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DA721E719AD006E6129 /* BudgetCell.swift */; };
+		79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DAA21E72017006E6129 /* DateFormatterManager.swift */; };
+		79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DAE21E726BF006E6129 /* Color+extensions.swift */; };
+		79811DB221E866A9006E6129 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB121E866A9006E6129 /* Reusable.swift */; };
+		79811DB421E866E2006E6129 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB321E866E2006E6129 /* UITableView+extensions.swift */; };
+		79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB521E867F0006E6129 /* Colection+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		79811D9D21E5D1EB006E6129 /* BudgetsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenRouter.swift; sourceTree = "<group>"; };
 		79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsScreenBuilder.swift; sourceTree = "<group>"; };
 		79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetsScreen.storyboard; sourceTree = "<group>"; };
+		79811DA421E71352006E6129 /* BudgetsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsTableView.swift; sourceTree = "<group>"; };
+		79811DA721E719AD006E6129 /* BudgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCell.swift; sourceTree = "<group>"; };
+		79811DAA21E72017006E6129 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		79811DAE21E726BF006E6129 /* Color+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extensions.swift"; sourceTree = "<group>"; };
+		79811DB121E866A9006E6129 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		79811DB321E866E2006E6129 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
+		79811DB521E867F0006E6129 /* Colection+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colection+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,7 @@
 		79811D5621E32BA6006E6129 /* Budgets */ = {
 			isa = PBXGroup;
 			children = (
+				79811DAC21E7267F006E6129 /* Units */,
 				79811D8921E48261006E6129 /* Modules */,
 				79811D8721E4821F006E6129 /* Common */,
 				79811D6321E32BA7006E6129 /* Info.plist */,
@@ -152,6 +167,8 @@
 		79811D8721E4821F006E6129 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				79811DB021E8667C006E6129 /* Protocols */,
+				79811DA921E71FDE006E6129 /* Managers */,
 				79811D8821E48228006E6129 /* Models */,
 			);
 			path = Common;
@@ -196,8 +213,10 @@
 		79811D9221E5CEF0006E6129 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79811DA621E71913006E6129 /* Cell */,
 				79811D9721E5CF91006E6129 /* BudgetsScreenViewController.swift */,
 				79811DA121E5D2F5006E6129 /* BudgetsScreen.storyboard */,
+				79811DA421E71352006E6129 /* BudgetsTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +251,48 @@
 				79811D9F21E5D2B9006E6129 /* BudgetsScreenBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		79811DA621E71913006E6129 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79811DA721E719AD006E6129 /* BudgetCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		79811DA921E71FDE006E6129 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				79811DAA21E72017006E6129 /* DateFormatterManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		79811DAC21E7267F006E6129 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				79811DAD21E7268C006E6129 /* Extensions */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		79811DAD21E7268C006E6129 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				79811DAE21E726BF006E6129 /* Color+extensions.swift */,
+				79811DB321E866E2006E6129 /* UITableView+extensions.swift */,
+				79811DB521E867F0006E6129 /* Colection+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		79811DB021E8667C006E6129 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				79811DB121E866A9006E6129 /* Reusable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,14 +426,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */,
 				79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */,
+				79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
+				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,
 				79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
+				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
 				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
+				79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */,
 				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
+				79811DB421E866E2006E6129 /* UITableView+extensions.swift in Sources */,
 				79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */,
 				79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */,
+				79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

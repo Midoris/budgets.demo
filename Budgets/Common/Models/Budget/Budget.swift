@@ -14,7 +14,7 @@ struct Budget {
     let month: String
     let incomeFunds: [Fund]
     let expensesFunds: [Fund]
-    let currency: String
+    let currencyCode: String
 }
 
 struct Fund {

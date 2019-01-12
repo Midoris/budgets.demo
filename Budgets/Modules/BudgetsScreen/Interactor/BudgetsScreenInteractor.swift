@@ -46,7 +46,7 @@ extension BudgetsScreenInteractor {
             month: "Februrary",
             incomeFunds: [salaryFund],
             expensesFunds: [foodFund],
-            currency: "Euro"
+            currencyCode: "EUR"
         )
         
         completion([budget])

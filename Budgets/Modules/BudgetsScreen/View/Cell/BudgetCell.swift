@@ -72,7 +72,7 @@ extension BudgetCellViewModel {
         let expensesTotal = budget.expensesFunds
             .map { $0.amount }
             .reduce(0, +)
-        let currencySymbol = "€"
+        let currencySymbol = CurrencyManager.getCurrencyFromCode(code: budget.currencyCode)?.symol ?? ""
         balanceAmount = "\(incomeTotal - expensesTotal) \(currencySymbol)"
         expenceTitle = "Expence"
         expenceAmount = "\(expensesTotal) \(currencySymbol)"

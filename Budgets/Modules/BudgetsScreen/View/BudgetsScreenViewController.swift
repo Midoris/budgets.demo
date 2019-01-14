@@ -21,13 +21,7 @@ class BudgetsScreenViewController: UIViewController {
     }
     
     private func initialViewSetup() {
-        prepareViewForTabBar()
         setupTableView()
-    }
-    
-    private func prepareViewForTabBar() {
-        self.title = "Budgets"
-        self.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.bookmarks, tag: 0)
     }
     
     private func setupTableView() {

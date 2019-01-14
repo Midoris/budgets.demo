@@ -30,6 +30,12 @@
 		79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB521E867F0006E6129 /* Colection+extensions.swift */; };
 		79811DB821EA4A5E006E6129 /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB721EA4A5E006E6129 /* CurrencyManager.swift */; };
 		79811DBA21EA4B48006E6129 /* Sequence+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DB921EA4B48006E6129 /* Sequence+extensions.swift */; };
+		79811DC221ED1284006E6129 /* BalanceScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC121ED1284006E6129 /* BalanceScreenViewController.swift */; };
+		79811DC421ED12A9006E6129 /* BalanceScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC321ED12A9006E6129 /* BalanceScreenPresenter.swift */; };
+		79811DC621ED12D1006E6129 /* BalanceScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC521ED12D1006E6129 /* BalanceScreenInteractor.swift */; };
+		79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC721ED12EC006E6129 /* BalanceScreenRouter.swift */; };
+		79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC921ED1314006E6129 /* BalanceScreenBuilder.swift */; };
+		79811DCC21ED13C1006E6129 /* BalanceScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,12 @@
 		79811DB521E867F0006E6129 /* Colection+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colection+extensions.swift"; sourceTree = "<group>"; };
 		79811DB721EA4A5E006E6129 /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
 		79811DB921EA4B48006E6129 /* Sequence+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+extensions.swift"; sourceTree = "<group>"; };
+		79811DC121ED1284006E6129 /* BalanceScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenViewController.swift; sourceTree = "<group>"; };
+		79811DC321ED12A9006E6129 /* BalanceScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenPresenter.swift; sourceTree = "<group>"; };
+		79811DC521ED12D1006E6129 /* BalanceScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenInteractor.swift; sourceTree = "<group>"; };
+		79811DC721ED12EC006E6129 /* BalanceScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenRouter.swift; sourceTree = "<group>"; };
+		79811DC921ED1314006E6129 /* BalanceScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenBuilder.swift; sourceTree = "<group>"; };
+		79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BalanceScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +201,7 @@
 		79811D8921E48261006E6129 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				79811DBB21ED120A006E6129 /* BalanceScreen */,
 				79811D9121E5CE95006E6129 /* BudgetsScreen */,
 			);
 			path = Modules;
@@ -301,6 +314,59 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		79811DBB21ED120A006E6129 /* BalanceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC021ED124F006E6129 /* View */,
+				79811DBF21ED1236006E6129 /* Presenter */,
+				79811DBE21ED122C006E6129 /* Interactor */,
+				79811DBD21ED1220006E6129 /* Router */,
+				79811DBC21ED1217006E6129 /* Builder */,
+			);
+			path = BalanceScreen;
+			sourceTree = "<group>";
+		};
+		79811DBC21ED1217006E6129 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC921ED1314006E6129 /* BalanceScreenBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		79811DBD21ED1220006E6129 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC721ED12EC006E6129 /* BalanceScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		79811DBE21ED122C006E6129 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC521ED12D1006E6129 /* BalanceScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		79811DBF21ED1236006E6129 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC321ED12A9006E6129 /* BalanceScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		79811DC021ED124F006E6129 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79811DC121ED1284006E6129 /* BalanceScreenViewController.swift */,
+				79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */,
+				79811DCC21ED13C1006E6129 /* BalanceScreen.storyboard in Resources */,
 				79811D6221E32BA7006E6129 /* LaunchScreen.storyboard in Resources */,
 				79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */,
 			);
@@ -439,14 +506,19 @@
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
 				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,
 				79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */,
+				79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
 				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
 				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
 				79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */,
+				79811DC621ED12D1006E6129 /* BalanceScreenInteractor.swift in Sources */,
 				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
+				79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */,
 				79811DB421E866E2006E6129 /* UITableView+extensions.swift in Sources */,
+				79811DC421ED12A9006E6129 /* BalanceScreenPresenter.swift in Sources */,
 				79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */,
 				79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */,
+				79811DC221ED1284006E6129 /* BalanceScreenViewController.swift in Sources */,
 				79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,
 				79811DB821EA4A5E006E6129 /* CurrencyManager.swift in Sources */,

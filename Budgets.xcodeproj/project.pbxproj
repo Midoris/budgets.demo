@@ -36,6 +36,25 @@
 		79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC721ED12EC006E6129 /* BalanceScreenRouter.swift */; };
 		79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DC921ED1314006E6129 /* BalanceScreenBuilder.swift */; };
 		79811DCC21ED13C1006E6129 /* BalanceScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */; };
+		79811DCE21EDB046006E6129 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79811DCD21EDB046006E6129 /* Icons.xcassets */; };
+		79811DD021EDBAAA006E6129 /* BalancePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DCF21EDBAAA006E6129 /* BalancePageViewController.swift */; };
+		79811DD221EDBB76006E6129 /* BalanceFundContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DD121EDBB76006E6129 /* BalanceFundContentViewController.swift */; };
+		79811DD621EEFC1F006E6129 /* BalanceFundsPageVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DD521EEFC1F006E6129 /* BalanceFundsPageVCPresenter.swift */; };
+		79811DE721F19E65006E6129 /* CHIBasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DDB21F19E65006E6129 /* CHIBasePageControl.swift */; };
+		79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DDC21F19E65006E6129 /* CHIPageControllable.swift */; };
+		79811DE921F19E65006E6129 /* CHILayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DDD21F19E65006E6129 /* CHILayer.swift */; };
+		79811DEA21F19E65006E6129 /* CHIPageControlJalapeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DDE21F19E65006E6129 /* CHIPageControlJalapeno.swift */; };
+		79811DEB21F19E65006E6129 /* CHIPageControlAleppo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DDF21F19E65006E6129 /* CHIPageControlAleppo.swift */; };
+		79811DEC21F19E65006E6129 /* CHIPageControlJaloro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE021F19E65006E6129 /* CHIPageControlJaloro.swift */; };
+		79811DED21F19E65006E6129 /* CHIPageControlChimayo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE121F19E65006E6129 /* CHIPageControlChimayo.swift */; };
+		79811DEE21F19E65006E6129 /* CHIPageControlPuya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE221F19E65006E6129 /* CHIPageControlPuya.swift */; };
+		79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE321F19E65006E6129 /* CHIPageControlPaprika.swift */; };
+		79811DF021F19E65006E6129 /* CHIPageControlFresno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE421F19E65006E6129 /* CHIPageControlFresno.swift */; };
+		79811DF121F19E65006E6129 /* CHIPageControlAji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DE521F19E65006E6129 /* CHIPageControlAji.swift */; };
+		79811DF221F19E65006E6129 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79811DE621F19E65006E6129 /* Info.plist */; };
+		79811DF521F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DF421F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift */; };
+		79811DF821F1ACD0006E6129 /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DF721F1ACD0006E6129 /* Device.generated.swift */; };
+		79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +110,26 @@
 		79811DC721ED12EC006E6129 /* BalanceScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenRouter.swift; sourceTree = "<group>"; };
 		79811DC921ED1314006E6129 /* BalanceScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceScreenBuilder.swift; sourceTree = "<group>"; };
 		79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BalanceScreen.storyboard; sourceTree = "<group>"; };
+		79811DCD21EDB046006E6129 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		79811DCF21EDBAAA006E6129 /* BalancePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePageViewController.swift; sourceTree = "<group>"; };
+		79811DD121EDBB76006E6129 /* BalanceFundContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFundContentViewController.swift; sourceTree = "<group>"; };
+		79811DD521EEFC1F006E6129 /* BalanceFundsPageVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFundsPageVCPresenter.swift; sourceTree = "<group>"; };
+		79811DD921F19E65006E6129 /* CHIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHIPageControl.h; sourceTree = "<group>"; };
+		79811DDB21F19E65006E6129 /* CHIBasePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIBasePageControl.swift; sourceTree = "<group>"; };
+		79811DDC21F19E65006E6129 /* CHIPageControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControllable.swift; sourceTree = "<group>"; };
+		79811DDD21F19E65006E6129 /* CHILayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHILayer.swift; sourceTree = "<group>"; };
+		79811DDE21F19E65006E6129 /* CHIPageControlJalapeno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlJalapeno.swift; sourceTree = "<group>"; };
+		79811DDF21F19E65006E6129 /* CHIPageControlAleppo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlAleppo.swift; sourceTree = "<group>"; };
+		79811DE021F19E65006E6129 /* CHIPageControlJaloro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlJaloro.swift; sourceTree = "<group>"; };
+		79811DE121F19E65006E6129 /* CHIPageControlChimayo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlChimayo.swift; sourceTree = "<group>"; };
+		79811DE221F19E65006E6129 /* CHIPageControlPuya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlPuya.swift; sourceTree = "<group>"; };
+		79811DE321F19E65006E6129 /* CHIPageControlPaprika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlPaprika.swift; sourceTree = "<group>"; };
+		79811DE421F19E65006E6129 /* CHIPageControlFresno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlFresno.swift; sourceTree = "<group>"; };
+		79811DE521F19E65006E6129 /* CHIPageControlAji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlAji.swift; sourceTree = "<group>"; };
+		79811DE621F19E65006E6129 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79811DF421F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFunsPageVCHelper.swift; sourceTree = "<group>"; };
+		79811DF721F1ACD0006E6129 /* Device.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.generated.swift; sourceTree = "<group>"; };
+		79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +213,7 @@
 			children = (
 				79811D5721E32BA6006E6129 /* AppDelegate.swift */,
 				79811D5E21E32BA7006E6129 /* Assets.xcassets */,
+				79811DCD21EDB046006E6129 /* Icons.xcassets */,
 				79811D6021E32BA7006E6129 /* LaunchScreen.storyboard */,
 				79811D8D21E5BFEC006E6129 /* RootRouter.swift */,
 			);
@@ -283,6 +323,7 @@
 			children = (
 				79811DAA21E72017006E6129 /* DateFormatterManager.swift */,
 				79811DB721EA4A5E006E6129 /* CurrencyManager.swift */,
+				79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -290,6 +331,7 @@
 		79811DAC21E7267F006E6129 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				79811DD721F19E43006E6129 /* Library */,
 				79811DAD21E7268C006E6129 /* Extensions */,
 			);
 			path = Units;
@@ -317,6 +359,7 @@
 		79811DBB21ED120A006E6129 /* BalanceScreen */ = {
 			isa = PBXGroup;
 			children = (
+				79811DF321F1A96B006E6129 /* Entity */,
 				79811DC021ED124F006E6129 /* View */,
 				79811DBF21ED1236006E6129 /* Presenter */,
 				79811DBE21ED122C006E6129 /* Interactor */,
@@ -354,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				79811DC321ED12A9006E6129 /* BalanceScreenPresenter.swift */,
+				79811DD521EEFC1F006E6129 /* BalanceFundsPageVCPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -362,9 +406,64 @@
 			isa = PBXGroup;
 			children = (
 				79811DC121ED1284006E6129 /* BalanceScreenViewController.swift */,
+				79811DCF21EDBAAA006E6129 /* BalancePageViewController.swift */,
+				79811DD121EDBB76006E6129 /* BalanceFundContentViewController.swift */,
 				79811DCB21ED13C1006E6129 /* BalanceScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		79811DD721F19E43006E6129 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				79811DF621F1ACC2006E6129 /* Device */,
+				79811DD821F19E65006E6129 /* CHIPageControl */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		79811DD821F19E65006E6129 /* CHIPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				79811DD921F19E65006E6129 /* CHIPageControl.h */,
+				79811DDA21F19E65006E6129 /* Core */,
+				79811DDE21F19E65006E6129 /* CHIPageControlJalapeno.swift */,
+				79811DDF21F19E65006E6129 /* CHIPageControlAleppo.swift */,
+				79811DE021F19E65006E6129 /* CHIPageControlJaloro.swift */,
+				79811DE121F19E65006E6129 /* CHIPageControlChimayo.swift */,
+				79811DE221F19E65006E6129 /* CHIPageControlPuya.swift */,
+				79811DE321F19E65006E6129 /* CHIPageControlPaprika.swift */,
+				79811DE421F19E65006E6129 /* CHIPageControlFresno.swift */,
+				79811DE521F19E65006E6129 /* CHIPageControlAji.swift */,
+				79811DE621F19E65006E6129 /* Info.plist */,
+			);
+			path = CHIPageControl;
+			sourceTree = "<group>";
+		};
+		79811DDA21F19E65006E6129 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				79811DDB21F19E65006E6129 /* CHIBasePageControl.swift */,
+				79811DDC21F19E65006E6129 /* CHIPageControllable.swift */,
+				79811DDD21F19E65006E6129 /* CHILayer.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		79811DF321F1A96B006E6129 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				79811DF421F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		79811DF621F1ACC2006E6129 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				79811DF721F1ACD0006E6129 /* Device.generated.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,8 +572,10 @@
 			files = (
 				79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */,
 				79811DCC21ED13C1006E6129 /* BalanceScreen.storyboard in Resources */,
+				79811DF221F19E65006E6129 /* Info.plist in Resources */,
 				79811D6221E32BA7006E6129 /* LaunchScreen.storyboard in Resources */,
 				79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */,
+				79811DCE21EDB046006E6129 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,19 +600,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79811DF021F19E65006E6129 /* CHIPageControlFresno.swift in Sources */,
+				79811DF821F1ACD0006E6129 /* Device.generated.swift in Sources */,
+				79811DED21F19E65006E6129 /* CHIPageControlChimayo.swift in Sources */,
 				79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */,
 				79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */,
+				79811DF521F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift in Sources */,
 				79811DBA21EA4B48006E6129 /* Sequence+extensions.swift in Sources */,
+				79811DD221EDBB76006E6129 /* BalanceFundContentViewController.swift in Sources */,
 				79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
 				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,
+				79811DEE21F19E65006E6129 /* CHIPageControlPuya.swift in Sources */,
+				79811DE921F19E65006E6129 /* CHILayer.swift in Sources */,
 				79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */,
+				79811DF121F19E65006E6129 /* CHIPageControlAji.swift in Sources */,
 				79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
+				79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */,
 				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
 				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
+				79811DEC21F19E65006E6129 /* CHIPageControlJaloro.swift in Sources */,
 				79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */,
 				79811DC621ED12D1006E6129 /* BalanceScreenInteractor.swift in Sources */,
+				79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */,
+				79811DE721F19E65006E6129 /* CHIBasePageControl.swift in Sources */,
+				79811DEB21F19E65006E6129 /* CHIPageControlAleppo.swift in Sources */,
 				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
 				79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */,
 				79811DB421E866E2006E6129 /* UITableView+extensions.swift in Sources */,
@@ -519,8 +633,12 @@
 				79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */,
 				79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */,
 				79811DC221ED1284006E6129 /* BalanceScreenViewController.swift in Sources */,
+				79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */,
+				79811DD021EDBAAA006E6129 /* BalancePageViewController.swift in Sources */,
 				79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,
+				79811DEA21F19E65006E6129 /* CHIPageControlJalapeno.swift in Sources */,
+				79811DD621EEFC1F006E6129 /* BalanceFundsPageVCPresenter.swift in Sources */,
 				79811DB821EA4A5E006E6129 /* CurrencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

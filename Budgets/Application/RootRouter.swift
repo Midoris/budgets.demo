@@ -20,13 +20,13 @@ class RootRouter: RootRouterProtocol {
         
         let budgetsRouter = BudgetsScreenBuilder().setupModule()
         let budgetsController = budgetsRouter.viewController ?? UIViewController()
-        budgetsController.title = "Balance"
+        budgetsController.title = "Budgets"
         budgetsController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.bookmarks, tag: 0)
         let budgetsNavController = UINavigationController(rootViewController: budgetsController)
         
         let balanceRouter = BalanceScreenBuilder().setupModule()
         let balanceController = balanceRouter.viewController ?? UIViewController()
-        balanceController.title = "Budgets"
+        balanceController.title = "Balance"
         balanceController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         let balanceNavController = UINavigationController(rootViewController: balanceController)
         
@@ -39,6 +39,7 @@ class RootRouter: RootRouterProtocol {
         let controllers = [budgetsNavController, balanceNavController,  UINavigationController(rootViewController: historyVC)]
         
         tabBarController.viewControllers = controllers
+        tabBarController.selectedIndex = 1
         
         window?.rootViewController = tabBarController
     }

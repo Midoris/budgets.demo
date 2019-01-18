@@ -16,6 +16,10 @@ struct Currency: Hashable, Equatable  {
 
 struct CurrencyManager {
     
+    static private let nameLocale = NSLocale(localeIdentifier: "US")
+    
+    static private var allCurrencyCodes = Locale.commonISOCurrencyCodes
+    
     static func getCurrencies() -> [Currency] {
         
         var allCurrencies: [Currency] = []
@@ -41,10 +45,6 @@ struct CurrencyManager {
         guard let matchingCurrency = (allCurrensies.first { $0.code == code }) else { return nil }
         return matchingCurrency
     }
-    
-    static private let nameLocale = NSLocale(localeIdentifier: "US")
-    
-    static private var allCurrencyCodes = Locale.commonISOCurrencyCodes
     
     static private func getSymbol(forCurrencyCode code: String) -> String? {
         let locale = NSLocale(localeIdentifier: code)

@@ -13,6 +13,7 @@ extension UIColor {
     static let red = colorFromHex(hex: 0xEA515D)
     static let green = colorFromHex(hex: 0x62D4A8)
     static let textGrey = colorFromHex(hex: 0x72808B)
+    static let yellowBackground = colorFromHex(hex: 0xEE9A37)
 //    static let lightRed = colorFromHex(hex: 0xFF4477)
 //    static let lavenderPurple = colorFromHex(hex: 0x8888AA)
 //    static let midnightPurple = colorFromHex(hex: 0x222244)

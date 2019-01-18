@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         RootRouter().presentRootView(in: window)
         
+        let _ = HapticFeedbackManager.shared // to prepare feedback in init
+        
         return true
     }
 

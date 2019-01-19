@@ -30,13 +30,19 @@ class RootRouter: RootRouterProtocol {
         balanceController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         let balanceNavController = UINavigationController(rootViewController: balanceController)
         
-        let historyVC = ViewController()
-        historyVC.title = "History"
-        historyVC.view.backgroundColor = UIColor.cyan
+        let historyRouter = HistoryScreenBuilder().setupModule()
+        let historyController = historyRouter.viewController ?? UIViewController()
+        historyController.title = "History"
+        historyController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        let historyNavController = UINavigationController(rootViewController: historyController)
         
-        historyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+//        let historyVC = ViewController()
+//        historyVC.title = "History"
+//        historyVC.view.backgroundColor = UIColor.cyan
+//
+//        historyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         
-        let controllers = [budgetsNavController, balanceNavController,  UINavigationController(rootViewController: historyVC)]
+        let controllers = [budgetsNavController, balanceNavController,  historyNavController]
         
         tabBarController.viewControllers = controllers
         tabBarController.selectedIndex = 1

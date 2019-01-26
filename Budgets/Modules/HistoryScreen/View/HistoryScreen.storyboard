@@ -25,5 +25,28 @@
             </objects>
             <point key="canvasLocation" x="100" y="166"/>
         </scene>
+        <!--History Funs Page View Controller-->
+        <scene sceneID="gFh-kj-3TU">
+            <objects>
+                <pageViewController storyboardIdentifier="HistoryFunsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3ev-45-dgf" customClass="HistoryFunsPageViewController" customModule="Budgets" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IiY-pe-uv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-582"/>
+        </scene>
+        <!--History Fund Content View Controller-->
+        <scene sceneID="kUJ-kJ-yRM">
+            <objects>
+                <viewController storyboardIdentifier="HistoryFundContentViewController" id="aat-1P-nAq" customClass="HistoryFundContentViewController" customModule="Budgets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wFh-kJ-PFS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="S2g-sM-ggR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWI-Pk-7C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="-587"/>
+        </scene>
     </scenes>
 </document>

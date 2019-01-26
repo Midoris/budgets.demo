@@ -17,20 +17,22 @@ protocol HistoryScreenPresenterInput: class {
 
 enum HistoryScreenVCEvent {
     case viewDidLoad
-    case sampleButtonTapped
 }
 
 class HistoryScreenPresenter {
     weak var view: HistoryScreenViewPresenterOutput?
+    weak var pageVC: HistoryFundsPageVCPresenterOutput?
     let interactor: HistoryScreenInteractorInput
     let router: HistoryScreenRouterInput
     
     init(
         view: HistoryScreenViewPresenterOutput,
+        pageVC: HistoryFundsPageVCPresenterOutput,
         interactor: HistoryScreenInteractorInput,
         router: HistoryScreenRouterInput
         ) {
         self.view = view
+        self.pageVC = pageVC
         self.interactor = interactor
         self.router = router
     }
@@ -40,17 +42,23 @@ extension HistoryScreenPresenter: HistoryScreenPresenterInput {
     func handle(event: HistoryScreenVCEvent) {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
-        case .sampleButtonTapped: self.handleSampleButtonTapped()
         }
     }
 }
 
 extension HistoryScreenPresenter {
-    fileprivate func handleViewDidLoad() {
-        self.view?.handle(command: .showSampleLabel)
+
+    private func handleViewDidLoad() {
+        interactor.handle(command: .getBudgets(completion: handle))
     }
     
-    fileprivate func handleSampleButtonTapped() {
-        self.interactor.handle(command: .sampleWork)
+    private func handle(budgets: [Budget]) {
+        
+        guard let lastBadget = budgets.last else { return }
+        
+        view?.handle(command: .updateUI(lastBadget))
+        pageVC?.handle(command: .prepareContetnt(funds: lastBadget.expensesFunds, currency: lastBadget.currencyCode))
     }
+
+    
 }

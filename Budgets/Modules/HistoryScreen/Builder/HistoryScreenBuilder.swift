@@ -10,23 +10,28 @@ import UIKit
 
 struct HistoryScreenBuilder {
     
-    private let storyBoardName = "HistoryScreen"
+    static let storyBoardName = "HistoryScreen"
     
     func setupModule() -> HistoryScreenRouterInput {
         
         guard
-            let view = UIStoryboard(name: self.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: HistoryScreenViewController.self)) as? HistoryScreenViewController
+            let view = UIStoryboard(name: HistoryScreenBuilder.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: HistoryScreenViewController.self)) as? HistoryScreenViewController
+            else { return HistoryScreenRouter() }
+        
+        guard let pageController = UIStoryboard(name: HistoryScreenBuilder.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: HistoryFunsPageViewController.self)) as? HistoryFunsPageViewController
             else { return HistoryScreenRouter() }
         
         let router: HistoryScreenRouterInput = HistoryScreenRouter()
         let interactor: HistoryScreenInteractorInput = HistoryScreenInteractor()
-        let presenter: HistoryScreenPresenterInput = HistoryScreenPresenter(
+        let presenter: HistoryScreenPresenterInput & HistoryFundsPageVCPresenterIntput = HistoryScreenPresenter(
             view: view,
+            pageVC: pageController,
             interactor: interactor,
             router: router
         )
         
         view.presenter = presenter
+        view.pageVC = pageController
         router.viewController = view
         
         return router

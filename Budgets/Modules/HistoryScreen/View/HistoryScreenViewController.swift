@@ -14,33 +14,47 @@ protocol HistoryScreenViewPresenterOutput: class {
 }
 
 enum HistoryScreenPresenterCommand {
-    case showSampleLabel
+    case updateUI(Budget)
+    case updatePageProgress(Int)
 }
 
 class HistoryScreenViewController: UIViewController {
     var presenter: HistoryScreenPresenterInput?
+    var pageVC: HistoryFunsPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.handle(event: .viewDidLoad)
     }
-    
-    func sampleButtonTapped() {
-        presenter?.handle(event: .sampleButtonTapped)
-    }
+
 }
 
 extension HistoryScreenViewController: HistoryScreenViewPresenterOutput {
     
     func handle(command: HistoryScreenPresenterCommand) {
         switch command {
-        case .showSampleLabel: self.showSomeLabel()
+        case .updateUI(let budget):
+            self.updateLabels(with: budget)
+            self.preparePageVC(funds: budget.expensesFunds, currencyCode: budget.currencyCode)
+        case .updatePageProgress(let index):
+            self.updatePageProgress(index: index)
         }
     }
 }
 
 extension HistoryScreenViewController {
-    fileprivate func showSomeLabel() {
-        // Show some Label
+    private func updateLabels(with budget: Budget) {
+        // TODO: Update labels
+    }
+    
+    private func preparePageVC(funds: [Fund], currencyCode: String) {
+        guard let _pageVC = self.pageVC else { return }
+        _pageVC.view.frame = CGRect(x: 0, y: 240.0, width: self.view.bounds.width, height: 240.0)
+        self.view.addSubview(_pageVC.view)
+        _pageVC.didMove(toParent: self)
+    }
+    
+    private func updatePageProgress(index: Int) {
+
     }
 }

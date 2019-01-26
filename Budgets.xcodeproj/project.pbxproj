@@ -66,6 +66,11 @@
 		79CE2EBE21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EBD21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift */; };
 		79CE2EC021FCD31D0048066A /* HistoryFundsEntriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EBF21FCD31D0048066A /* HistoryFundsEntriesTableView.swift */; };
 		79CE2EC221FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EC121FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift */; };
+		79CE2EC721FCE2570048066A /* HistoryFundEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EC621FCE2570048066A /* HistoryFundEntryCell.swift */; };
+		79CE2EC921FCE27A0048066A /* HistoryFundDateTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EC821FCE27A0048066A /* HistoryFundDateTitleCell.swift */; };
+		79CE2ECB21FCE4570048066A /* HistoryFundsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2ECA21FCE4570048066A /* HistoryFundsCellType.swift */; };
+		79CE2ECD21FCE5570048066A /* HistoryFundEntriesTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2ECC21FCE5570048066A /* HistoryFundEntriesTableViewHelper.swift */; };
+		79CE2ECF21FCE5EA0048066A /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2ECE21FCE5EA0048066A /* Date+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +157,11 @@
 		79CE2EBD21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFunsPageVCHelper.swift; sourceTree = "<group>"; };
 		79CE2EBF21FCD31D0048066A /* HistoryFundsEntriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsEntriesTableView.swift; sourceTree = "<group>"; };
 		79CE2EC121FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsEntriesTVPresenter.swift; sourceTree = "<group>"; };
+		79CE2EC621FCE2570048066A /* HistoryFundEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundEntryCell.swift; sourceTree = "<group>"; };
+		79CE2EC821FCE27A0048066A /* HistoryFundDateTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundDateTitleCell.swift; sourceTree = "<group>"; };
+		79CE2ECA21FCE4570048066A /* HistoryFundsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsCellType.swift; sourceTree = "<group>"; };
+		79CE2ECC21FCE5570048066A /* HistoryFundEntriesTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundEntriesTableViewHelper.swift; sourceTree = "<group>"; };
+		79CE2ECE21FCE5EA0048066A /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +377,7 @@
 				79811DB321E866E2006E6129 /* UITableView+extensions.swift */,
 				79811DB521E867F0006E6129 /* Colection+extensions.swift */,
 				79811DB921EA4B48006E6129 /* Sequence+extensions.swift */,
+				79CE2ECE21FCE5EA0048066A /* Date+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,6 +549,7 @@
 		79CE2EA721F30A660048066A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79CE2EC321FCE12F0048066A /* Cell */,
 				79CE2EB121F30B250048066A /* HistoryScreenViewController.swift */,
 				79CE2EB521FCC8C10048066A /* HistoryFunsPageViewController.swift */,
 				79CE2EB921FCCA970048066A /* HistoryFundContentViewController.swift */,
@@ -551,8 +563,19 @@
 			isa = PBXGroup;
 			children = (
 				79CE2EBD21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift */,
+				79CE2ECA21FCE4570048066A /* HistoryFundsCellType.swift */,
+				79CE2ECC21FCE5570048066A /* HistoryFundEntriesTableViewHelper.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		79CE2EC321FCE12F0048066A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				79CE2EC621FCE2570048066A /* HistoryFundEntryCell.swift */,
+				79CE2EC821FCE27A0048066A /* HistoryFundDateTitleCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,6 +719,7 @@
 				79CE2EBC21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift in Sources */,
 				79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */,
 				79CE2EC221FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift in Sources */,
+				79CE2ECB21FCE4570048066A /* HistoryFundsCellType.swift in Sources */,
 				79811DF521F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift in Sources */,
 				79CE2EB621FCC8C10048066A /* HistoryFunsPageViewController.swift in Sources */,
 				79811DBA21EA4B48006E6129 /* Sequence+extensions.swift in Sources */,
@@ -713,15 +737,19 @@
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
 				79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */,
 				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
+				79CE2ECF21FCE5EA0048066A /* Date+extensions.swift in Sources */,
 				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
 				79811DEC21F19E65006E6129 /* CHIPageControlJaloro.swift in Sources */,
 				79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */,
 				79811DC621ED12D1006E6129 /* BalanceScreenInteractor.swift in Sources */,
+				79CE2EC921FCE27A0048066A /* HistoryFundDateTitleCell.swift in Sources */,
 				79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */,
 				79811DE721F19E65006E6129 /* CHIBasePageControl.swift in Sources */,
 				79811DEB21F19E65006E6129 /* CHIPageControlAleppo.swift in Sources */,
 				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
+				79CE2EC721FCE2570048066A /* HistoryFundEntryCell.swift in Sources */,
 				79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */,
+				79CE2ECD21FCE5570048066A /* HistoryFundEntriesTableViewHelper.swift in Sources */,
 				79811DB421E866E2006E6129 /* UITableView+extensions.swift in Sources */,
 				79811DC421ED12A9006E6129 /* BalanceScreenPresenter.swift in Sources */,
 				79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */,

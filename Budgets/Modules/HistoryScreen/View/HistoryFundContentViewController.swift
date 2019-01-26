@@ -19,10 +19,9 @@ class HistoryFundContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("index: \(pageIndex)")
         self.tableView.presenter = presenter
+        self.tableView.entries = self.funds.flatMap { $0.entries }
     }
-    
 
 }
 

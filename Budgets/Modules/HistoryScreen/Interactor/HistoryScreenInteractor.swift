@@ -27,41 +27,65 @@ class HistoryScreenInteractor: HistoryScreenInteractorInput {
 extension HistoryScreenInteractor {
     private func getBudgets(completion: ([Budget]) -> ()) {
         
+        let salaryEntry = FundEntry(date: Date(),
+                                    amount: 3500.0,
+                                    description: ""
+        )
         let salaryFund = Fund(
             name: "Salary",
             amount: 3500.0,
             type: .income,
-            entries: []
+            entries: [salaryEntry]
+        )
+        let apartmentEntry = FundEntry(date: Date(),
+                                    amount: 965.0,
+                                    description: ""
         )
         let apartmentFund = Fund(
             name: "Apartment",
             amount: 900.0,
             type: .recurring,
-            entries: []
+            entries: [apartmentEntry]
+        )
+        let foodEntry = FundEntry(date: Date(),
+                                       amount: 51.1,
+                                       description: ""
         )
         let foodFund = Fund(
             name: "Food",
             amount: 300.0,
             type: .normal,
-            entries: []
+            entries: [foodEntry]
+        )
+        let stuffEntry = FundEntry(date: Date(),
+                                  amount: 15.0,
+                                  description: ""
         )
         let stuffFund = Fund(
             name: "Clothes",
             amount: 200.0,
             type: .normal,
-            entries: []
+            entries: [stuffEntry]
+        )
+        let baliEntry = FundEntry(date: Date(),
+                                   amount: 900.0,
+                                   description: ""
         )
         let baliFund = Fund(
             name: "Bali",
             amount: 900.0,
             type: .saving,
-            entries: []
+            entries: [baliEntry]
+        )
+        let investmentEntry = FundEntry(date: Date(),
+                                  amount: 1000,
+                                  description: ""
         )
         let investmentFund = Fund(
             name: "Investments",
             amount: 1000.0,
             type: .saving,
-            entries: []
+            entries: [investmentEntry]
         )
         let budget = Budget(
             startDate: Date(),

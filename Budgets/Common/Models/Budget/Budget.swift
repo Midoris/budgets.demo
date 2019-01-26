@@ -32,7 +32,7 @@ extension Fund {
     }
 }
 
-struct FundEntry {
+struct FundEntry: Equatable, Hashable {
     let date: Date
     let amount: Double
     let description: String

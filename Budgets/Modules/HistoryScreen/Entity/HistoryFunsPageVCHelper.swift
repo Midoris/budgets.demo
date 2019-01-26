@@ -10,7 +10,7 @@ import UIKit
 
 struct HistoryFunsPageVCHelper {
     
-    static func getContentControllers(for funds: [Fund], and currencyCode: String) -> [UIViewController] {
+    static func getContentControllers(for funds: [Fund], and currencyCode: String, presenter: HistoryFundsPageContentPresenterIntput?) -> [UIViewController] {
         
         let recurringFunds = funds.filter { $0.type == .recurring }
         let normalFunds = funds.filter { $0.type == .normal }
@@ -22,7 +22,8 @@ struct HistoryFunsPageVCHelper {
             HistoryFundContentViewController.getInstatnce(funds: funds,
                                                           index: 0,
                                                           contentType: .total,
-                                                          currencyCode: currencyCode)
+                                                          currencyCode: currencyCode,
+                                                          presenter: presenter)
         )
         
         if recurringFunds.count > 0 {
@@ -30,7 +31,8 @@ struct HistoryFunsPageVCHelper {
                 HistoryFundContentViewController.getInstatnce(funds: recurringFunds,
                                                               index: controllers.count,
                                                               contentType: .recurring,
-                                                              currencyCode: currencyCode)
+                                                              currencyCode: currencyCode,
+                                                              presenter: presenter)
             )
         }
         normalFunds.forEach { fund in
@@ -38,7 +40,8 @@ struct HistoryFunsPageVCHelper {
                 HistoryFundContentViewController.getInstatnce(funds: [fund],
                                                               index: controllers.count,
                                                               contentType: .normal,
-                                                              currencyCode: currencyCode)
+                                                              currencyCode: currencyCode,
+                                                              presenter: presenter)
             )
         }
         savingFunds.forEach { fund in
@@ -46,7 +49,8 @@ struct HistoryFunsPageVCHelper {
                 HistoryFundContentViewController.getInstatnce(funds: [fund],
                                                               index: controllers.count,
                                                               contentType: .savings,
-                                                              currencyCode: currencyCode)
+                                                              currencyCode: currencyCode,
+                                                              presenter: presenter)
             )
         }
         

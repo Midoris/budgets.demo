@@ -64,6 +64,8 @@
 		79CE2EBA21FCCA980048066A /* HistoryFundContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EB921FCCA970048066A /* HistoryFundContentViewController.swift */; };
 		79CE2EBC21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EBB21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift */; };
 		79CE2EBE21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EBD21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift */; };
+		79CE2EC021FCD31D0048066A /* HistoryFundsEntriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EBF21FCD31D0048066A /* HistoryFundsEntriesTableView.swift */; };
+		79CE2EC221FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EC121FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		79CE2EB921FCCA970048066A /* HistoryFundContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundContentViewController.swift; sourceTree = "<group>"; };
 		79CE2EBB21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsPageVCPresenter.swift; sourceTree = "<group>"; };
 		79CE2EBD21FCCE5F0048066A /* HistoryFunsPageVCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFunsPageVCHelper.swift; sourceTree = "<group>"; };
+		79CE2EBF21FCD31D0048066A /* HistoryFundsEntriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsEntriesTableView.swift; sourceTree = "<group>"; };
+		79CE2EC121FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFundsEntriesTVPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -526,6 +530,7 @@
 			children = (
 				79CE2EAF21F30B010048066A /* HistoryScreenPresenter.swift */,
 				79CE2EBB21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift */,
+				79CE2EC121FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				79CE2EB121F30B250048066A /* HistoryScreenViewController.swift */,
 				79CE2EB521FCC8C10048066A /* HistoryFunsPageViewController.swift */,
 				79CE2EB921FCCA970048066A /* HistoryFundContentViewController.swift */,
+				79CE2EBF21FCD31D0048066A /* HistoryFundsEntriesTableView.swift */,
 				79CE2EB321F30B700048066A /* HistoryScreen.storyboard */,
 			);
 			path = View;
@@ -689,6 +695,7 @@
 				79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */,
 				79CE2EBC21FCCB2E0048066A /* HistoryFundsPageVCPresenter.swift in Sources */,
 				79811DA021E5D2B9006E6129 /* BudgetsScreenBuilder.swift in Sources */,
+				79CE2EC221FCD4580048066A /* HistoryFundsEntriesTVPresenter.swift in Sources */,
 				79811DF521F1A9A9006E6129 /* BalanceFunsPageVCHelper.swift in Sources */,
 				79CE2EB621FCC8C10048066A /* HistoryFunsPageViewController.swift in Sources */,
 				79811DBA21EA4B48006E6129 /* Sequence+extensions.swift in Sources */,
@@ -725,6 +732,7 @@
 				79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */,
 				79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */,
 				79811DD021EDBAAA006E6129 /* BalancePageViewController.swift in Sources */,
+				79CE2EC021FCD31D0048066A /* HistoryFundsEntriesTableView.swift in Sources */,
 				79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,
 				79CE2EBA21FCCA980048066A /* HistoryFundContentViewController.swift in Sources */,

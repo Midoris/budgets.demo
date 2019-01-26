@@ -19,7 +19,6 @@ class HistoryFunsPageViewController: UIPageViewController {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
-        // Do any additional setup after loading the view.
     }
     
 }
@@ -70,7 +69,11 @@ extension HistoryFunsPageViewController: HistoryFundsPageVCPresenterOutput {
             
         case .prepareContetnt(let funds, let currencyCode):
             
-            let controllers = HistoryFunsPageVCHelper.getContentControllers(for: funds, and: currencyCode)
+            let controllers = HistoryFunsPageVCHelper.getContentControllers(
+                for: funds,
+                and: currencyCode,
+                presenter: self.presenter as? HistoryFundsPageContentPresenterIntput
+            )
 
             self.pages = controllers
             

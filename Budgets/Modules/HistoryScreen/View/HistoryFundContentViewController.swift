@@ -10,6 +10,8 @@ import UIKit
 
 class HistoryFundContentViewController: UIViewController {
     
+    @IBOutlet weak var tableView: HistoryFundsEntriesTableView!
+    var presenter: HistoryFundsPageContentPresenterIntput?
     var contetnType: BFContetnType?
     var currencyCode: String?
     var funds: [Fund] = []
@@ -18,7 +20,7 @@ class HistoryFundContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("index: \(pageIndex)")
-        // Do any additional setup after loading the view.
+        self.tableView.presenter = presenter
     }
     
 
@@ -29,7 +31,8 @@ extension HistoryFundContentViewController {
         funds: [Fund],
         index: Int,
         contentType: BFContetnType,
-        currencyCode: String
+        currencyCode: String,
+        presenter: HistoryFundsPageContentPresenterIntput?
         ) -> UIViewController {
         
         guard let contentVC = UIStoryboard(name: HistoryScreenBuilder.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: HistoryFundContentViewController.self)) as? HistoryFundContentViewController else {
@@ -40,6 +43,7 @@ extension HistoryFundContentViewController {
         contentVC.pageIndex = index
         contentVC.contetnType = contentType
         contentVC.currencyCode = currencyCode
+        contentVC.presenter = presenter
         return contentVC
         
     }

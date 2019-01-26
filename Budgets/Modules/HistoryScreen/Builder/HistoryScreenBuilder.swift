@@ -32,6 +32,7 @@ struct HistoryScreenBuilder {
         
         view.presenter = presenter
         view.pageVC = pageController
+        pageController.presenter = presenter
         router.viewController = view
         
         return router

@@ -40,9 +40,24 @@
                     <view key="view" contentMode="scaleToFill" id="wFh-kJ-PFS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UTV-OL-p2U" customClass="HistoryFundsEntriesTableView" customModule="Budgets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UTV-OL-p2U" firstAttribute="top" secondItem="S2g-sM-ggR" secondAttribute="top" id="77E-gB-7I4"/>
+                            <constraint firstItem="S2g-sM-ggR" firstAttribute="trailing" secondItem="UTV-OL-p2U" secondAttribute="trailing" id="7JS-K2-nFR"/>
+                            <constraint firstItem="UTV-OL-p2U" firstAttribute="leading" secondItem="S2g-sM-ggR" secondAttribute="leading" id="Coa-xn-iHQ"/>
+                            <constraint firstItem="S2g-sM-ggR" firstAttribute="bottom" secondItem="UTV-OL-p2U" secondAttribute="bottom" id="HsE-Ht-Vh7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="S2g-sM-ggR"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="UTV-OL-p2U" id="bqv-3q-1Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWI-Pk-7C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

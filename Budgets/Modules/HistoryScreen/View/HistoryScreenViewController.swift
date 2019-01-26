@@ -49,7 +49,16 @@ extension HistoryScreenViewController {
     
     private func preparePageVC(funds: [Fund], currencyCode: String) {
         guard let _pageVC = self.pageVC else { return }
-        _pageVC.view.frame = CGRect(x: 0, y: 240.0, width: self.view.bounds.width, height: 240.0)
+
+        let tabBarHeight = self.tabBarController?.tabBar.bounds.height ?? 0
+        let topPadding: CGFloat = 240
+        
+        _pageVC.view.frame = CGRect(
+            x: 0,
+            y: topPadding,
+            width: self.view.bounds.width,
+            height: self.view.bounds.height - (tabBarHeight + topPadding)
+        )
         self.view.addSubview(_pageVC.view)
         _pageVC.didMove(toParent: self)
     }

@@ -27,51 +27,6 @@ class BalanceScreenInteractor: BalanceScreenInteractorInput {
 extension BalanceScreenInteractor {
     private func getBudgets(completion: ([Budget]) -> ()) {
         
-        let salaryFund = Fund(
-            name: "Salary",
-            amount: 3500.0,
-            type: .income,
-            entries: []
-        )
-        let apartmentFund = Fund(
-            name: "Apartment",
-            amount: 900.0,
-            type: .recurring,
-            entries: []
-        )
-        let foodFund = Fund(
-            name: "Food",
-            amount: 300.0,
-            type: .normal,
-            entries: []
-        )
-        let stuffFund = Fund(
-            name: "Clothes",
-            amount: 200.0,
-            type: .normal,
-            entries: []
-        )
-        let baliFund = Fund(
-            name: "Bali",
-            amount: 900.0,
-            type: .saving,
-            entries: []
-        )
-        let investmentFund = Fund(
-            name: "Investments",
-            amount: 1000.0,
-            type: .saving,
-            entries: []
-        )
-        let budget = Budget(
-            startDate: Date(),
-            endDate: Date(),
-            month: "Februrary",
-            incomeFunds: [salaryFund],
-            expensesFunds: [apartmentFund, foodFund, stuffFund, baliFund, investmentFund],
-            currencyCode: "EUR"
-        )
-        
-        completion([budget])
+        BudgetsStorageManager.getBudgets() { completion($0) }
     }
 }

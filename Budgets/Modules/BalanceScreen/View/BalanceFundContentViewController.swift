@@ -38,7 +38,7 @@ class BalanceFundContentViewController: UIViewController {
         
         let currencySymbol = CurrencyManager
             .getCurrencyFromCode(code: _currencyCode)?.symol ?? ""
-        let amount = funds.map { $0.amount }.reduce(0, +)
+        let amount = funds.map { $0.balance }.reduce(0, +)
         amountLabel.text = "\(amount) \(currencySymbol)"
     }
 

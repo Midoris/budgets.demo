@@ -22,8 +22,6 @@ class HistoryScreenViewController: UIViewController {
     var presenter: HistoryScreenPresenterInput?
     var pageVC: HistoryFunsPageViewController?
     let pageControl = CHIPageControlChimayo(frame: CGRect.zero)
-    @IBOutlet weak var monthNameLabel: UILabel!
-    @IBOutlet weak var budgetDatesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +31,41 @@ class HistoryScreenViewController: UIViewController {
     
     private func initialViewSetup() {
         self.view.addSubview(pageControl)
+    }
+    
+    func setTitle(title:String, subtitle:String) -> UIView {
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: -4, width: 0, height: 18))
+        
+        
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        titleLabel.text = title
+        titleLabel.sizeToFit()
+        
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 20, width: 0, height: 14))
+        subtitleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.textColor = UIColor.black
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        subtitleLabel.text = subtitle
+        subtitleLabel.sizeToFit()
+        
+        
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 38))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+        
+        if widthDiff < 0 {
+            let newX = widthDiff / 2
+            subtitleLabel.frame.origin.x = abs(newX)
+        } else {
+            let newX = widthDiff / 2
+            titleLabel.frame.origin.x = newX
+        }
+        
+        return titleView
     }
 
 }
@@ -53,15 +86,19 @@ extension HistoryScreenViewController: HistoryScreenViewPresenterOutput {
 extension HistoryScreenViewController {
     
     private func updateLabels(with budget: Budget) {
-        self.monthNameLabel.text = budget.month
-        self.budgetDatesLabel.text = "\(budget.startDate.string(for: .short)) - \(budget.endDate.string(for: .short))"
+        
+        let month = budget.month
+        let dates = "\(budget.startDate.string(for: .short)) - \(budget.endDate.string(for: .short))"
+        self.navigationItem.titleView = setTitle(title: month, subtitle: dates)
+
     }
     
     private func preparePageVC(funds: [Fund], currencyCode: String) {
         guard let _pageVC = self.pageVC else { return }
 
         let tabBarHeight = self.tabBarController?.tabBar.bounds.height ?? 0
-        let topPadding: CGFloat = 240
+        let navBarHeight = navigationController?.navigationBar.frame.maxY ?? 0
+        let topPadding: CGFloat = navBarHeight
         let pageControlHeight: CGFloat = 32.0
         
         _pageVC.view.frame = CGRect(

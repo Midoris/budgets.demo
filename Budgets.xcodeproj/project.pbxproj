@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793DE4BD2201765E00DED932 /* BudgetsStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DE4BC2201765E00DED932 /* BudgetsStorageManager.swift */; };
 		79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5721E32BA6006E6129 /* AppDelegate.swift */; };
 		79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5921E32BA6006E6129 /* ViewController.swift */; };
 		79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79811D5E21E32BA7006E6129 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		793DE4BC2201765E00DED932 /* BudgetsStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsStorageManager.swift; sourceTree = "<group>"; };
 		79811D5421E32BA6006E6129 /* Budgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79811D5721E32BA6006E6129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79811D5921E32BA6006E6129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				79811DAA21E72017006E6129 /* DateFormatterManager.swift */,
 				79811DB721EA4A5E006E6129 /* CurrencyManager.swift */,
 				79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */,
+				793DE4BC2201765E00DED932 /* BudgetsStorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */,
 				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
 				79CE2ECF21FCE5EA0048066A /* Date+extensions.swift in Sources */,
+				793DE4BD2201765E00DED932 /* BudgetsStorageManager.swift in Sources */,
 				79811D9E21E5D1EB006E6129 /* BudgetsScreenRouter.swift in Sources */,
 				79811DEC21F19E65006E6129 /* CHIPageControlJaloro.swift in Sources */,
 				79811DAF21E726BF006E6129 /* Color+extensions.swift in Sources */,

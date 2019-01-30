@@ -42,7 +42,7 @@ class RootRouter: RootRouterProtocol {
 //
 //        historyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         
-        let controllers = [budgetsNavController, balanceNavController,  historyNavController]
+        let controllers = [budgetsNavController, balanceController,  historyNavController]
         
         tabBarController.viewControllers = controllers
         tabBarController.selectedIndex = 1

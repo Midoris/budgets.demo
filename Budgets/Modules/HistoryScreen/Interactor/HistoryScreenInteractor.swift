@@ -38,17 +38,17 @@ extension HistoryScreenInteractor {
             entries: [salaryEntry]
         )
         let apartmentEntry = FundEntry(date: Date(),
-                                    amount: 965.0,
+                                    amount: -965.0,
                                     description: ""
         )
         let apartmentFund = Fund(
             name: "Apartment",
-            amount: 900.0,
+            amount: 1100.0,
             type: .recurring,
             entries: [apartmentEntry]
         )
         let foodEntry = FundEntry(date: Date(),
-                                       amount: 51.1,
+                                       amount: -51.1,
                                        description: ""
         )
         let foodFund = Fund(
@@ -58,7 +58,7 @@ extension HistoryScreenInteractor {
             entries: [foodEntry]
         )
         let stuffEntry = FundEntry(date: Date(),
-                                  amount: 15.0,
+                                  amount: -15.0,
                                   description: ""
         )
         let stuffFund = Fund(
@@ -68,7 +68,7 @@ extension HistoryScreenInteractor {
             entries: [stuffEntry]
         )
         let baliEntry = FundEntry(date: Date(),
-                                   amount: 900.0,
+                                   amount: -900.0,
                                    description: ""
         )
         let baliFund = Fund(
@@ -78,7 +78,7 @@ extension HistoryScreenInteractor {
             entries: [baliEntry]
         )
         let investmentEntry = FundEntry(date: Date(),
-                                  amount: 1000,
+                                  amount: -1000,
                                   description: ""
         )
         let investmentFund = Fund(

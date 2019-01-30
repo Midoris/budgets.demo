@@ -10,7 +10,7 @@ import UIKit
 
 class HistoryFundsEntriesTableView: UITableView {
     
-    var presenter: HistoryFundsPageContentPresenterIntput? {
+    var scrollingDelegate: HistoryFundsEntriesTVScrollDelegate? {
         didSet {
             self.dataSource = self
             self.delegate = self
@@ -80,8 +80,8 @@ extension HistoryFundsEntriesTableView {
             
             let visableEntries = Array(allEntries.suffix(from: index))
             let isAllVisable = allEntries.count == visableEntries.count
-            // Update amount to date
-//            self.borrowerScreenDelegate?.didScroll(visableEntries: visableEntries, allVisable: isAllVisable)
+
+            self.scrollingDelegate?.didScroll(visableEntries: visableEntries, isAllVisable: isAllVisable)
             
         case .title:
             
@@ -93,8 +93,8 @@ extension HistoryFundsEntriesTableView {
                 
                 let visableEntries = Array(allEntries.suffix(from: index))
                 let isAllVisable = allEntries.count == visableEntries.count
-                // Update amount to date
-//                self.borrowerScreenDelegate?.didScroll(visableEntries: visableEntries, allVisable: isAllVisable)
+
+                self.scrollingDelegate?.didScroll(visableEntries: visableEntries, isAllVisable: isAllVisable)
                 
             default: break
             }

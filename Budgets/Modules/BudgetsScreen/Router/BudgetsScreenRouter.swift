@@ -44,10 +44,11 @@ extension BudgetsScreenRouter: BudgetsScreenRouterInput {
 extension BudgetsScreenRouter {
     
     fileprivate func showBudgetDetailsScreen(budget: Budget) {
-        let budgetDetailsRouter = BudgetDetailsScreenBuilder().setupModule()
+        let budgetDetailsRouter = BudgetDetailsScreenBuilder()
+            .setupModule(selecteBudget: budget)
         guard let budgetVC = budgetDetailsRouter.viewController else { return }
-        
-        self.viewController?.navigationController?.pushViewController(budgetVC, animated: true)
+        self.viewController?.navigationController?
+            .pushViewController(budgetVC, animated: true)
     }
     
 }

@@ -17,22 +17,24 @@ protocol BudgetDetailsScreenPresenterInput: class {
 
 enum BudgetDetailsScreenVCEvent {
     case viewDidLoad
-    case sampleButtonTapped
 }
 
 class BudgetDetailsScreenPresenter {
     weak var view: BudgetDetailsScreenViewPresenterOutput?
     let interactor: BudgetDetailsScreenInteractorInput
     let router: BudgetDetailsScreenRouterInput
+    var selecteBudget: Budget?
     
     init(
         view: BudgetDetailsScreenViewPresenterOutput,
         interactor: BudgetDetailsScreenInteractorInput,
-        router: BudgetDetailsScreenRouterInput
+        router: BudgetDetailsScreenRouterInput,
+        selectedBudget: Budget?
         ) {
         self.view = view
         self.interactor = interactor
         self.router = router
+        self.selecteBudget = selectedBudget
     }
 }
 
@@ -40,17 +42,14 @@ extension BudgetDetailsScreenPresenter: BudgetDetailsScreenPresenterInput {
     func handle(event: BudgetDetailsScreenVCEvent) {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
-        case .sampleButtonTapped: self.handleSampleButtonTapped()
         }
     }
 }
 
 extension BudgetDetailsScreenPresenter {
-    fileprivate func handleViewDidLoad() {
-        self.view?.handle(command: .showSampleLabel)
-    }
     
-    fileprivate func handleSampleButtonTapped() {
-        self.interactor.handle(command: .sampleWork)
+    fileprivate func handleViewDidLoad() {
+
     }
+
 }

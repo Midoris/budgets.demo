@@ -14,7 +14,7 @@ protocol BudgetDetailsScreenViewPresenterOutput: class {
 }
 
 enum BudgetDetailsScreenPresenterCommand {
-    case showSampleLabel
+
 }
 
 class BudgetDetailsScreenViewController: UIViewController {
@@ -25,22 +25,17 @@ class BudgetDetailsScreenViewController: UIViewController {
         presenter?.handle(event: .viewDidLoad)
     }
     
-    func sampleButtonTapped() {
-        presenter?.handle(event: .sampleButtonTapped)
-    }
 }
 
 extension BudgetDetailsScreenViewController: BudgetDetailsScreenViewPresenterOutput {
     
     func handle(command: BudgetDetailsScreenPresenterCommand) {
         switch command {
-        case .showSampleLabel: self.showSomeLabel()
+
         }
     }
 }
 
 extension BudgetDetailsScreenViewController {
-    fileprivate func showSomeLabel() {
-        // Show some Label
-    }
+
 }

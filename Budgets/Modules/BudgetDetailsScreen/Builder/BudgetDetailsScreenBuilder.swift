@@ -12,7 +12,7 @@ struct BudgetDetailsScreenBuilder {
     
     private let storyBoardName = "BudgetDetailsScreen"
     
-    func setupModule() -> BudgetDetailsScreenRouterInput {
+    func setupModule(selecteBudget: Budget) -> BudgetDetailsScreenRouterInput {
         
         guard
             let view = UIStoryboard(name: self.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: BudgetDetailsScreenViewController.self)) as? BudgetDetailsScreenViewController
@@ -23,7 +23,8 @@ struct BudgetDetailsScreenBuilder {
         let presenter: BudgetDetailsScreenPresenterInput = BudgetDetailsScreenPresenter(
             view: view,
             interactor: interactor,
-            router: router
+            router: router,
+            selectedBudget: selecteBudget
         )
         
         view.presenter = presenter

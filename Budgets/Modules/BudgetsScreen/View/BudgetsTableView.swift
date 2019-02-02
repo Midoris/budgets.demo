@@ -53,6 +53,12 @@ extension BudgetsTableView: UITableViewDataSource {
 
 extension BudgetsTableView: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let selectedBudget = self.budgets[safe: indexPath.row] else { return }
+        self.presenter?.handle(event: .budgetSelected(selectedBudget))
+        
+    }
 }
 
 

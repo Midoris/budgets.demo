@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		793DE4BD2201765E00DED932 /* BudgetsStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793DE4BC2201765E00DED932 /* BudgetsStorageManager.swift */; };
+		7976A681220571170079BF76 /* BudgetDetailsScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A680220571170079BF76 /* BudgetDetailsScreenBuilder.swift */; };
+		7976A684220571440079BF76 /* BudgetDetailsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A683220571440079BF76 /* BudgetDetailsScreenRouter.swift */; };
+		7976A687220571820079BF76 /* BudgetDetailsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A686220571820079BF76 /* BudgetDetailsScreenInteractor.swift */; };
+		7976A68A220571AF0079BF76 /* BudgetDetailsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A689220571AF0079BF76 /* BudgetDetailsScreenPresenter.swift */; };
+		7976A68D220571F00079BF76 /* BudgetDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */; };
+		7976A68F2205721B0079BF76 /* BudgetDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */; };
 		79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5721E32BA6006E6129 /* AppDelegate.swift */; };
 		79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5921E32BA6006E6129 /* ViewController.swift */; };
 		79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79811D5E21E32BA7006E6129 /* Assets.xcassets */; };
@@ -93,6 +99,12 @@
 
 /* Begin PBXFileReference section */
 		793DE4BC2201765E00DED932 /* BudgetsStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsStorageManager.swift; sourceTree = "<group>"; };
+		7976A680220571170079BF76 /* BudgetDetailsScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenBuilder.swift; sourceTree = "<group>"; };
+		7976A683220571440079BF76 /* BudgetDetailsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenRouter.swift; sourceTree = "<group>"; };
+		7976A686220571820079BF76 /* BudgetDetailsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenInteractor.swift; sourceTree = "<group>"; };
+		7976A689220571AF0079BF76 /* BudgetDetailsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenPresenter.swift; sourceTree = "<group>"; };
+		7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenViewController.swift; sourceTree = "<group>"; };
+		7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetDetailsScreen.storyboard; sourceTree = "<group>"; };
 		79811D5421E32BA6006E6129 /* Budgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79811D5721E32BA6006E6129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79811D5921E32BA6006E6129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +203,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7976A67E220570F00079BF76 /* BudgetDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7976A690220572670079BF76 /* Entity */,
+				7976A68B220571D90079BF76 /* View */,
+				7976A688220571970079BF76 /* Presenter */,
+				7976A685220571640079BF76 /* Interactor */,
+				7976A6822205712D0079BF76 /* Router */,
+				7976A67F220570FF0079BF76 /* Builder */,
+			);
+			path = BudgetDetailsScreen;
+			sourceTree = "<group>";
+		};
+		7976A67F220570FF0079BF76 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				7976A680220571170079BF76 /* BudgetDetailsScreenBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		7976A6822205712D0079BF76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7976A683220571440079BF76 /* BudgetDetailsScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7976A685220571640079BF76 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7976A686220571820079BF76 /* BudgetDetailsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7976A688220571970079BF76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7976A689220571AF0079BF76 /* BudgetDetailsScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7976A68B220571D90079BF76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */,
+				7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7976A690220572670079BF76 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		79811D4B21E32BA6006E6129 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +348,7 @@
 		79811D8921E48261006E6129 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7976A67E220570F00079BF76 /* BudgetDetailsScreen */,
 				79CE2EA221F30A2B0048066A /* HistoryScreen */,
 				79811DBB21ED120A006E6129 /* BalanceScreen */,
 				79811D9121E5CE95006E6129 /* BudgetsScreen */,
@@ -688,6 +762,7 @@
 				79811DA221E5D2F5006E6129 /* BudgetsScreen.storyboard in Resources */,
 				79CE2EB421F30B700048066A /* HistoryScreen.storyboard in Resources */,
 				79811DCC21ED13C1006E6129 /* BalanceScreen.storyboard in Resources */,
+				7976A68F2205721B0079BF76 /* BudgetDetailsScreen.storyboard in Resources */,
 				79811D6221E32BA7006E6129 /* LaunchScreen.storyboard in Resources */,
 				79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */,
 				79811DCE21EDB046006E6129 /* Icons.xcassets in Resources */,
@@ -715,7 +790,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7976A681220571170079BF76 /* BudgetDetailsScreenBuilder.swift in Sources */,
 				79811DF021F19E65006E6129 /* CHIPageControlFresno.swift in Sources */,
+				7976A687220571820079BF76 /* BudgetDetailsScreenInteractor.swift in Sources */,
 				79811DF821F1ACD0006E6129 /* Device.generated.swift in Sources */,
 				79811DED21F19E65006E6129 /* CHIPageControlChimayo.swift in Sources */,
 				79811DB621E867F0006E6129 /* Colection+extensions.swift in Sources */,
@@ -731,6 +808,7 @@
 				79CE2EB021F30B010048066A /* HistoryScreenPresenter.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
 				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,
+				7976A68A220571AF0079BF76 /* BudgetDetailsScreenPresenter.swift in Sources */,
 				79811DEE21F19E65006E6129 /* CHIPageControlPuya.swift in Sources */,
 				79811DE921F19E65006E6129 /* CHILayer.swift in Sources */,
 				79811D9A21E5D08E006E6129 /* BudgetsScreenPresenter.swift in Sources */,
@@ -750,6 +828,7 @@
 				79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */,
 				79811DE721F19E65006E6129 /* CHIBasePageControl.swift in Sources */,
 				79811DEB21F19E65006E6129 /* CHIPageControlAleppo.swift in Sources */,
+				7976A68D220571F00079BF76 /* BudgetDetailsScreenViewController.swift in Sources */,
 				79811D9C21E5D16D006E6129 /* BudgetsScreenInteractor.swift in Sources */,
 				79CE2EC721FCE2570048066A /* HistoryFundEntryCell.swift in Sources */,
 				79811DCA21ED1314006E6129 /* BalanceScreenBuilder.swift in Sources */,
@@ -764,6 +843,7 @@
 				79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */,
 				79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */,
 				79811DD021EDBAAA006E6129 /* BalancePageViewController.swift in Sources */,
+				7976A684220571440079BF76 /* BudgetDetailsScreenRouter.swift in Sources */,
 				79CE2EC021FCD31D0048066A /* HistoryFundsEntriesTableView.swift in Sources */,
 				79811DAB21E72017006E6129 /* DateFormatterManager.swift in Sources */,
 				79811D8C21E482C1006E6129 /* Budget.swift in Sources */,

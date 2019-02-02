@@ -33,6 +33,7 @@ protocol BudgetsScreenPresenterInput: class {
 
 enum BudgetsScreenVCEvent {
     case viewDidLoad
+    case budgetSelected(Budget)
 }
 
 extension BudgetsScreenPresenter: BudgetsScreenPresenterInput {
@@ -40,6 +41,8 @@ extension BudgetsScreenPresenter: BudgetsScreenPresenterInput {
         switch event {
         case .viewDidLoad:
             self.handleViewDidLoad()
+        case .budgetSelected(let budget):
+            self.handleBudgetSelected(budget: budget)
         }
     }
 }
@@ -47,11 +50,15 @@ extension BudgetsScreenPresenter: BudgetsScreenPresenterInput {
 extension BudgetsScreenPresenter {
     
     fileprivate func handleViewDidLoad() {
-        interactor.handle(command: .getBudgets(completion: handle))
+        interactor.handle(command: .getBudgets(completion: handleBudgetsFetched))
     }
     
-    fileprivate func handle(budgets: [Budget]) {
+    fileprivate func handleBudgetsFetched(_ budgets: [Budget]) {
         self.view?.handle(command: .updateTable(with: budgets))
+    }
+    
+    private func handleBudgetSelected(budget: Budget) {
+        self.router.handle(route: .budgetDetails(budget))
     }
     
 }

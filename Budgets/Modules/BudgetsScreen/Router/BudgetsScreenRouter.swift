@@ -16,7 +16,7 @@ protocol BudgetsScreenRouterInput: class {
 }
 
 enum BudgetsScreenRoute {
-    case someScreen
+    case budgetDetails(Budget)
 }
 
 class BudgetsScreenRouter {
@@ -35,7 +35,7 @@ extension BudgetsScreenRouter: BudgetsScreenRouterInput {
     
     func handle(route: BudgetsScreenRoute) {
         switch route {
-        case .someScreen: self.showSomeScreen()
+        case .budgetDetails(let budget): self.showBudgetDetailsScreen(budget: budget)
         }
     }
     
@@ -43,8 +43,11 @@ extension BudgetsScreenRouter: BudgetsScreenRouterInput {
 
 extension BudgetsScreenRouter {
     
-    fileprivate func showSomeScreen() {
-        // Show some screen
+    fileprivate func showBudgetDetailsScreen(budget: Budget) {
+        let budgetDetailsRouter = BudgetDetailsScreenBuilder().setupModule()
+        guard let budgetVC = budgetDetailsRouter.viewController else { return }
+        
+        self.viewController?.navigationController?.pushViewController(budgetVC, animated: true)
     }
     
 }

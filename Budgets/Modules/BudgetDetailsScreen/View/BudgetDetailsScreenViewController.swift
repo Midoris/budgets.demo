@@ -20,9 +20,16 @@ enum BudgetDetailsScreenPresenterCommand {
 class BudgetDetailsScreenViewController: UIViewController {
     var presenter: BudgetDetailsScreenPresenterInput?
     
+    @IBOutlet weak var tableView: BudgetDetailsTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initialViewSetup()
         presenter?.handle(event: .viewDidLoad)
+    }
+    
+    private func initialViewSetup() {
+        self.tableView.presenter = self.presenter
     }
     
 }

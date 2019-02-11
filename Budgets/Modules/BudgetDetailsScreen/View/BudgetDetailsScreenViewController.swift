@@ -14,7 +14,7 @@ protocol BudgetDetailsScreenViewPresenterOutput: class {
 }
 
 enum BudgetDetailsScreenPresenterCommand {
-
+    case updateUI(Budget)
 }
 
 class BudgetDetailsScreenViewController: UIViewController {
@@ -38,11 +38,13 @@ extension BudgetDetailsScreenViewController: BudgetDetailsScreenViewPresenterOut
     
     func handle(command: BudgetDetailsScreenPresenterCommand) {
         switch command {
-
+        case .updateUI(let budget): self.handleUpdateUI(with: budget)
         }
     }
 }
 
 extension BudgetDetailsScreenViewController {
-
+    private func handleUpdateUI(with budget: Budget) {
+        self.tableView.selectedBudget = budget
+    }
 }

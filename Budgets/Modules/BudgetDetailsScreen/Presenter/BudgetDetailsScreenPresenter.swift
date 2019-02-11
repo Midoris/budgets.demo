@@ -49,7 +49,9 @@ extension BudgetDetailsScreenPresenter: BudgetDetailsScreenPresenterInput {
 extension BudgetDetailsScreenPresenter {
     
     fileprivate func handleViewDidLoad() {
-
+        // TODO: - handle new budget creation with this screen
+        guard let _selectedBudget = self.selecteBudget else { return }
+        self.view?.handle(command: .updateUI(_selectedBudget))
     }
 
 }

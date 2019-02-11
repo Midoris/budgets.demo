@@ -15,6 +15,11 @@
 		7976A68D220571F00079BF76 /* BudgetDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */; };
 		7976A68F2205721B0079BF76 /* BudgetDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */; };
 		7976A692220578080079BF76 /* BudgetDetailsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A691220578080079BF76 /* BudgetDetailsTableView.swift */; };
+		7976A69422057C390079BF76 /* BudgetDetailsTVCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69322057C390079BF76 /* BudgetDetailsTVCellType.swift */; };
+		7976A69722114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69622114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift */; };
+		7976A69922114F3B0079BF76 /* BudgetDetailsFundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69822114F3B0079BF76 /* BudgetDetailsFundCell.swift */; };
+		7976A69B22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */; };
+		7976A69D2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */; };
 		79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5721E32BA6006E6129 /* AppDelegate.swift */; };
 		79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5921E32BA6006E6129 /* ViewController.swift */; };
 		79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79811D5E21E32BA7006E6129 /* Assets.xcassets */; };
@@ -107,6 +112,11 @@
 		7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BudgetDetailsScreen.storyboard; sourceTree = "<group>"; };
 		7976A691220578080079BF76 /* BudgetDetailsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTableView.swift; sourceTree = "<group>"; };
+		7976A69322057C390079BF76 /* BudgetDetailsTVCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTVCellType.swift; sourceTree = "<group>"; };
+		7976A69622114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsSectionTittleCell.swift; sourceTree = "<group>"; };
+		7976A69822114F3B0079BF76 /* BudgetDetailsFundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsFundCell.swift; sourceTree = "<group>"; };
+		7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsSectionTotalCell.swift; sourceTree = "<group>"; };
+		7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTotalCell.swift; sourceTree = "<group>"; };
 		79811D5421E32BA6006E6129 /* Budgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79811D5721E32BA6006E6129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79811D5921E32BA6006E6129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 		7976A68B220571D90079BF76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7976A69522114D320079BF76 /* Cell */,
 				7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */,
 				7976A691220578080079BF76 /* BudgetDetailsTableView.swift */,
 				7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */,
@@ -263,8 +274,20 @@
 		7976A690220572670079BF76 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				7976A69322057C390079BF76 /* BudgetDetailsTVCellType.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		7976A69522114D320079BF76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7976A69622114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift */,
+				7976A69822114F3B0079BF76 /* BudgetDetailsFundCell.swift */,
+				7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */,
+				7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		79811D4B21E32BA6006E6129 = {
@@ -809,6 +832,7 @@
 				79811DD221EDBB76006E6129 /* BalanceFundContentViewController.swift in Sources */,
 				79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */,
 				79CE2EB021F30B010048066A /* HistoryScreenPresenter.swift in Sources */,
+				7976A69B22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift in Sources */,
 				7976A692220578080079BF76 /* BudgetDetailsTableView.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
 				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,
@@ -820,6 +844,7 @@
 				79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */,
 				79CE2EAA21F30A890048066A /* HistoryScreenBuilder.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
+				7976A69722114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift in Sources */,
 				79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */,
 				79811DB221E866A9006E6129 /* Reusable.swift in Sources */,
 				79CE2ECF21FCE5EA0048066A /* Date+extensions.swift in Sources */,
@@ -830,6 +855,8 @@
 				79811DC621ED12D1006E6129 /* BalanceScreenInteractor.swift in Sources */,
 				79CE2EC921FCE27A0048066A /* HistoryFundDateTitleCell.swift in Sources */,
 				79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */,
+				7976A69422057C390079BF76 /* BudgetDetailsTVCellType.swift in Sources */,
+				7976A69D2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift in Sources */,
 				79811DE721F19E65006E6129 /* CHIBasePageControl.swift in Sources */,
 				79811DEB21F19E65006E6129 /* CHIPageControlAleppo.swift in Sources */,
 				7976A68D220571F00079BF76 /* BudgetDetailsScreenViewController.swift in Sources */,
@@ -843,6 +870,7 @@
 				79CE2EB221F30B250048066A /* HistoryScreenViewController.swift in Sources */,
 				79811D9821E5CF91006E6129 /* BudgetsScreenViewController.swift in Sources */,
 				79CE2EAE21F30ADD0048066A /* HistoryScreenInteractor.swift in Sources */,
+				7976A69922114F3B0079BF76 /* BudgetDetailsFundCell.swift in Sources */,
 				79811DC221ED1284006E6129 /* BalanceScreenViewController.swift in Sources */,
 				79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */,
 				79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */,

@@ -18,6 +18,8 @@ class BudgetDetailsTotalCell: UITableViewCell {
             guard let vm = viewModel else { return }
             self.titleLabel.text = vm.title
             self.amountLabel.text = vm.amount
+            self.titleLabel.textColor = vm.balanceColor
+            self.amountLabel.textColor = vm.balanceColor
         }
     }
     
@@ -32,6 +34,7 @@ class BudgetDetailsTotalCell: UITableViewCell {
 struct BudgetDetailsTotalCellVM {
     let title: String
     let amount: String
+    let balanceColor: UIColor
 }
 
 extension BudgetDetailsTotalCellVM {
@@ -42,5 +45,6 @@ extension BudgetDetailsTotalCellVM {
             .getCurrencyFromCode(code: budget.currencyCode)?.symol ?? ""
         let diff = budget.incomeFunds.map { $0.amount }.reduce(0, +) - budget.expensesFunds.map { $0.amount }.reduce(0, +)
         self.amount = "\(diff) \(currencySymbol)"
+        balanceColor = diff >= 0 ? .green : .red
     }
 }

@@ -15,10 +15,12 @@ class BudgetCell: UITableViewCell {
     @IBOutlet weak var datesLabel: UILabel!
     @IBOutlet weak var balanceTitleLabel: UILabel!
     @IBOutlet weak var balanceAmountLabel: UILabel!
-    @IBOutlet weak var expenceTitleLabel: UILabel!
-    @IBOutlet weak var expenceAmountLabel: UILabel!
+    @IBOutlet weak var expenseTitleLabel: UILabel!
+    @IBOutlet weak var expenseAmountLabel: UILabel!
     @IBOutlet weak var incomeTitleLabel: UILabel!
     @IBOutlet weak var incomeAmountLabel: UILabel!
+    @IBOutlet weak var savingsTitleLabel: UILabel!
+    @IBOutlet weak var savingsAmountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,10 +39,12 @@ class BudgetCell: UITableViewCell {
             self.datesLabel.text = vm.dates
             self.balanceTitleLabel.text = vm.balanceTitle
             self.balanceAmountLabel.text = vm.balanceAmount
-            self.expenceTitleLabel.text = vm.expenceTitle
-            self.expenceAmountLabel.text = vm.expenceAmount
+            self.expenseTitleLabel.text = vm.expenseTitle
+            self.expenseAmountLabel.text = vm.expenseAmount
             self.incomeTitleLabel.text = vm.incomeTitle
             self.incomeAmountLabel.text = vm.incomeAmount
+            self.savingsTitleLabel.text = vm.savingsTitle
+            self.savingsAmountLabel.text = vm.savingsAmount
             self.balanceTitleLabel.textColor = vm.balanceColor
             self.balanceAmountLabel.textColor = vm.balanceColor
         }
@@ -53,11 +57,13 @@ struct BudgetCellViewModel {
     let dates: String
     let balanceTitle: String
     let balanceAmount: String
-    let expenceTitle: String
-    let expenceAmount: String
+    let expenseTitle: String
+    let expenseAmount: String
     let incomeTitle: String
     let incomeAmount: String
     let balanceColor: UIColor
+    let savingsTitle: String
+    let savingsAmount: String
 }
 
 extension BudgetCellViewModel {
@@ -69,15 +75,20 @@ extension BudgetCellViewModel {
         let incomeTotal = budget.incomeFunds
             .map { $0.amount }
             .reduce(0, +)
-        let expensesTotal = budget.expensesFunds
+        let expensesTotal = budget.expensesFunds.filter { $0.type == .normal || $0.type == .recurring }
+            .map { $0.amount }
+            .reduce(0, +)
+        let savingsTotal = budget.expensesFunds.filter { $0.type == .saving }
             .map { $0.amount }
             .reduce(0, +)
         let currencySymbol = CurrencyManager.getCurrencyFromCode(code: budget.currencyCode)?.symol ?? ""
-        balanceAmount = "\(incomeTotal - expensesTotal) \(currencySymbol)"
-        expenceTitle = "Expence"
-        expenceAmount = "\(expensesTotal) \(currencySymbol)"
+        balanceAmount = "\(incomeTotal - (expensesTotal + savingsTotal)) \(currencySymbol)"
+        expenseTitle = "Expenses"
+        expenseAmount = "\(expensesTotal) \(currencySymbol)"
         incomeTitle = "Income"
         incomeAmount = "\(incomeTotal) \(currencySymbol)"
-        balanceColor = incomeTotal - expensesTotal >= 0 ? .green : .red
+        savingsTitle = "Savings"
+        savingsAmount = "\(savingsTotal) \(currencySymbol)"
+        balanceColor = incomeTotal - (expensesTotal + savingsTotal) >= 0 ? .green : .red
     }
 }

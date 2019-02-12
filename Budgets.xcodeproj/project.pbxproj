@@ -21,6 +21,7 @@
 		7976A69B22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */; };
 		7976A69D2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */; };
 		7976A69F2212900D0079BF76 /* BudgetDetailsTVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A69E2212900D0079BF76 /* BudgetDetailsTVHelper.swift */; };
+		7976A6A122134B110079BF76 /* AddFundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976A6A022134B110079BF76 /* AddFundViewController.swift */; };
 		79811D5821E32BA6006E6129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5721E32BA6006E6129 /* AppDelegate.swift */; };
 		79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811D5921E32BA6006E6129 /* ViewController.swift */; };
 		79811D5F21E32BA7006E6129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79811D5E21E32BA7006E6129 /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsSectionTotalCell.swift; sourceTree = "<group>"; };
 		7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTotalCell.swift; sourceTree = "<group>"; };
 		7976A69E2212900D0079BF76 /* BudgetDetailsTVHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsTVHelper.swift; sourceTree = "<group>"; };
+		7976A6A022134B110079BF76 /* AddFundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFundViewController.swift; sourceTree = "<group>"; };
 		79811D5421E32BA6006E6129 /* Budgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79811D5721E32BA6006E6129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79811D5921E32BA6006E6129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				7976A69522114D320079BF76 /* Cell */,
 				7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */,
+				7976A6A022134B110079BF76 /* AddFundViewController.swift */,
 				7976A691220578080079BF76 /* BudgetDetailsTableView.swift */,
 				7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */,
 			);
@@ -846,6 +849,7 @@
 				79811DF121F19E65006E6129 /* CHIPageControlAji.swift in Sources */,
 				79811DC821ED12EC006E6129 /* BalanceScreenRouter.swift in Sources */,
 				79CE2EAA21F30A890048066A /* HistoryScreenBuilder.swift in Sources */,
+				7976A6A122134B110079BF76 /* AddFundViewController.swift in Sources */,
 				79811D5A21E32BA6006E6129 /* ViewController.swift in Sources */,
 				7976A69722114E7D0079BF76 /* BudgetDetailsSectionTittleCell.swift in Sources */,
 				79811DE821F19E65006E6129 /* CHIPageControllable.swift in Sources */,

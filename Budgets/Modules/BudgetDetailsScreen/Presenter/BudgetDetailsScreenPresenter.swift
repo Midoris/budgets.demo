@@ -17,6 +17,7 @@ protocol BudgetDetailsScreenPresenterInput: class {
 
 enum BudgetDetailsScreenVCEvent {
     case viewDidLoad
+    case addNewFundTapped
 }
 
 class BudgetDetailsScreenPresenter {
@@ -42,6 +43,7 @@ extension BudgetDetailsScreenPresenter: BudgetDetailsScreenPresenterInput {
     func handle(event: BudgetDetailsScreenVCEvent) {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
+        case .addNewFundTapped: self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(nil))
         }
     }
 }

@@ -30,6 +30,11 @@ class BudgetDetailsScreenViewController: UIViewController {
     
     private func initialViewSetup() {
         self.tableView.presenter = self.presenter
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addNewFundTapped))
+    }
+    
+    @objc private func addNewFundTapped() {
+        self.presenter?.handle(event: .addNewFundTapped)
     }
     
 }

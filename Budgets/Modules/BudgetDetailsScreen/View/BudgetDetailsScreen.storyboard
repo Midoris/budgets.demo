@@ -167,5 +167,20 @@
             </objects>
             <point key="canvasLocation" x="232.80000000000001" y="164.16791604197903"/>
         </scene>
+        <!--Add Fund View Controller-->
+        <scene sceneID="ZBg-xM-xMS">
+            <objects>
+                <viewController storyboardIdentifier="AddFundViewController" id="Zd6-uk-MZt" customClass="AddFundViewController" customModule="Budgets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z3J-ms-OwM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JgH-xx-2En"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqO-WU-kKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="164"/>
+        </scene>
     </scenes>
 </document>

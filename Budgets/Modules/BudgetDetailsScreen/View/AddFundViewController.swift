@@ -9,7 +9,16 @@
 import UIKit
 
 class AddFundViewController: UIViewController {
-
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var amountTextField: UITextField!
+    
+    var selectedFunds: [Fund]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialViewSetup()
@@ -18,6 +27,11 @@ class AddFundViewController: UIViewController {
     
     private func initialViewSetup() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneButtonTapped))
+        
+        guard let _selectedFunds = selectedFunds else { return }
+        self.typeTextField.text = _selectedFunds.first?.type.rawValue
+        self.nameTextField.text = _selectedFunds.first?.name
+        self.amountTextField.text = String(_selectedFunds.map { $0.amount }.reduce(0, +))
     }
     
     @objc private func doneButtonTapped() {

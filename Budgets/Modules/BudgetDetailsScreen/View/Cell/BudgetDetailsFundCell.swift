@@ -32,11 +32,13 @@ class BudgetDetailsFundCell: UITableViewCell {
 struct BudgetDetailsFundCellVM {
     let title: String
     let amount: String
+    let funds: [Fund]
 }
 
 extension BudgetDetailsFundCellVM {
     init(funds: [Fund], currencyCode: String) {
         
+        self.funds = funds
         let currencySymbol = CurrencyManager
             .getCurrencyFromCode(code: currencyCode)?.symol ?? ""
         let amountText = funds.map { $0.amount }.reduce(0, +)

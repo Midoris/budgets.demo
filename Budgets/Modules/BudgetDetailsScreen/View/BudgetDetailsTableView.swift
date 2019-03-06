@@ -51,5 +51,16 @@ extension BudgetDetailsTableView: UITableViewDataSource {
 
 extension BudgetDetailsTableView: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cellType = ds[safe: indexPath.row] else { return }
+        switch cellType {
+            
+        case .fund(let vm):
+            presenter?.handle(event: .fundCellSelected(vm.funds))
+            
+        default: break
+        }
+    }
 }
 

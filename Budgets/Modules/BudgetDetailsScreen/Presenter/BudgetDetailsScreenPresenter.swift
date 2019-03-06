@@ -18,6 +18,7 @@ protocol BudgetDetailsScreenPresenterInput: class {
 enum BudgetDetailsScreenVCEvent {
     case viewDidLoad
     case addNewFundTapped
+    case fundCellSelected([Fund])
 }
 
 class BudgetDetailsScreenPresenter {
@@ -44,6 +45,8 @@ extension BudgetDetailsScreenPresenter: BudgetDetailsScreenPresenterInput {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
         case .addNewFundTapped: self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(nil))
+        case .fundCellSelected(let funds):
+            self.hendleFundCellSelected(with: funds)
         }
     }
 }
@@ -54,6 +57,10 @@ extension BudgetDetailsScreenPresenter {
         // TODO: - handle new budget creation with this screen
         guard let _selectedBudget = self.selecteBudget else { return }
         self.view?.handle(command: .updateUI(_selectedBudget))
+    }
+    
+    fileprivate func hendleFundCellSelected(with funds: [Fund]) {
+        self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(funds))
     }
 
 }

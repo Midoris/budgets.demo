@@ -174,9 +174,78 @@
                     <view key="view" contentMode="scaleToFill" id="Z3J-ms-OwM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEd-Vx-nz8">
+                                <rect key="frame" x="16" y="84" width="40" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z84-57-c4n">
+                                <rect key="frame" x="16" y="130" width="48" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-s1-1EN">
+                                <rect key="frame" x="16" y="176" width="64" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpy-fe-wdx">
+                                <rect key="frame" x="295" y="80" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="vZR-el-ejI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-In-n7b">
+                                <rect key="frame" x="295" y="126" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="ylW-1d-Kkm"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Px4-A3-UOv">
+                                <rect key="frame" x="295" y="172" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="6Xf-9F-Khz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kpy-fe-wdx" firstAttribute="centerY" secondItem="qEd-Vx-nz8" secondAttribute="centerY" id="3YY-uA-MpN"/>
+                            <constraint firstItem="2cS-s1-1EN" firstAttribute="leading" secondItem="JgH-xx-2En" secondAttribute="leading" constant="16" id="8HA-eN-nc3"/>
+                            <constraint firstItem="cTd-In-n7b" firstAttribute="centerY" secondItem="z84-57-c4n" secondAttribute="centerY" id="92I-Ov-OA9"/>
+                            <constraint firstItem="2cS-s1-1EN" firstAttribute="top" secondItem="z84-57-c4n" secondAttribute="bottom" constant="24" id="Cay-Ce-aCI"/>
+                            <constraint firstItem="z84-57-c4n" firstAttribute="leading" secondItem="JgH-xx-2En" secondAttribute="leading" constant="16" id="J0a-HO-JDQ"/>
+                            <constraint firstItem="qEd-Vx-nz8" firstAttribute="leading" secondItem="JgH-xx-2En" secondAttribute="leading" constant="16" id="KMg-Oe-uhd"/>
+                            <constraint firstItem="JgH-xx-2En" firstAttribute="trailing" secondItem="Px4-A3-UOv" secondAttribute="trailing" constant="16" id="Lde-cD-RyP"/>
+                            <constraint firstItem="z84-57-c4n" firstAttribute="top" secondItem="qEd-Vx-nz8" secondAttribute="bottom" constant="24" id="Sw3-e4-q8R"/>
+                            <constraint firstItem="Px4-A3-UOv" firstAttribute="centerY" secondItem="2cS-s1-1EN" secondAttribute="centerY" id="U5p-S0-35S"/>
+                            <constraint firstItem="JgH-xx-2En" firstAttribute="trailing" secondItem="cTd-In-n7b" secondAttribute="trailing" constant="16" id="VDo-bk-jyk"/>
+                            <constraint firstItem="JgH-xx-2En" firstAttribute="trailing" secondItem="kpy-fe-wdx" secondAttribute="trailing" constant="16" id="ZE1-1S-1lU"/>
+                            <constraint firstItem="qEd-Vx-nz8" firstAttribute="top" secondItem="JgH-xx-2En" secondAttribute="top" constant="64" id="dng-bI-9Uh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JgH-xx-2En"/>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="2cS-s1-1EN" id="6jZ-09-8iY"/>
+                        <outlet property="amountTextField" destination="Px4-A3-UOv" id="iKl-LV-Sgk"/>
+                        <outlet property="nameLabel" destination="z84-57-c4n" id="8Nm-vK-d2a"/>
+                        <outlet property="nameTextField" destination="cTd-In-n7b" id="BjH-iV-Oq4"/>
+                        <outlet property="typeLabel" destination="qEd-Vx-nz8" id="cFX-bx-frJ"/>
+                        <outlet property="typeTextField" destination="kpy-fe-wdx" id="Idc-9A-668"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqO-WU-kKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

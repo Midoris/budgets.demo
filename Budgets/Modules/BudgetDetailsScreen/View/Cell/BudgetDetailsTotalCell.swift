@@ -43,7 +43,9 @@ extension BudgetDetailsTotalCellVM {
         
         let currencySymbol = CurrencyManager
             .getCurrencyFromCode(code: budget.currencyCode)?.symol ?? ""
-        let diff = budget.incomeFunds.map { $0.amount }.reduce(0, +) - budget.expensesFunds.map { $0.amount }.reduce(0, +)
+        let incomeFunds = budget.funds.filter { $0.type == .income }
+        let notIncomeFunds = budget.funds.filter { $0.type != .income }
+        let diff = incomeFunds.map { $0.amount }.reduce(0, +) - notIncomeFunds.map { $0.amount }.reduce(0, +)
         self.amount = "\(diff) \(currencySymbol)"
         balanceColor = diff >= 0 ? .green : .red
     }

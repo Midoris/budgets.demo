@@ -72,13 +72,14 @@ extension BudgetCellViewModel {
         monthName = budget.month
         dates = "\(budget.startDate.string(for: .short)) - \(budget.endDate.string(for: .short))"
         balanceTitle = "Balance"
-        let incomeTotal = budget.incomeFunds
+        let incomeFunds = budget.funds.filter { $0.type == .income }
+        let incomeTotal = incomeFunds
             .map { $0.amount }
             .reduce(0, +)
-        let expensesTotal = budget.expensesFunds.filter { $0.type == .expense || $0.type == .recurring }
+        let expensesTotal = budget.funds.filter { $0.type == .expense || $0.type == .recurring }
             .map { $0.amount }
             .reduce(0, +)
-        let savingsTotal = budget.expensesFunds.filter { $0.type == .saving }
+        let savingsTotal = budget.funds.filter { $0.type == .saving }
             .map { $0.amount }
             .reduce(0, +)
         let currencySymbol = CurrencyManager.getCurrencyFromCode(code: budget.currencyCode)?.symol ?? ""

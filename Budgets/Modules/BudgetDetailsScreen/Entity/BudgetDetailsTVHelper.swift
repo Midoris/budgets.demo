@@ -12,10 +12,10 @@ struct BudgetDetailsTVHelper {
     
     static func getDS(from budget: Budget) -> [BudgetDetailsTVCellType] {
         
-        let incomeFunds = budget.incomeFunds
-        let normalExpenses = budget.expensesFunds.filter { $0.type == .expense }
-        let recuringExpenses = budget.expensesFunds.filter { $0.type == .recurring }
-        let savingsExpenses = budget.expensesFunds.filter { $0.type == .saving }
+        let incomeFunds = budget.funds.filter { $0.type == .income }
+        let normalExpenses = budget.funds.filter { $0.type == .expense }
+        let recuringExpenses = budget.funds.filter { $0.type == .recurring }
+        let savingsExpenses = budget.funds.filter { $0.type == .saving }
         
         var cellTypes: [BudgetDetailsTVCellType] = []
         cellTypes.append(

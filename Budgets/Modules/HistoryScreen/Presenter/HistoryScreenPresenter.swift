@@ -57,7 +57,8 @@ extension HistoryScreenPresenter {
         guard let lastBadget = budgets.last else { return }
         
         view?.handle(command: .updateUI(lastBadget))
-        pageVC?.handle(command: .prepareContetnt(funds: lastBadget.expensesFunds, currency: lastBadget.currencyCode))
+        let notIncomeFunds = lastBadget.funds.filter { $0.type != .income }
+        pageVC?.handle(command: .prepareContetnt(funds: notIncomeFunds, currency: lastBadget.currencyCode))
     }
 
     

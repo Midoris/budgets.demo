@@ -80,8 +80,7 @@ struct BudgetsStorageManager {
             startDate: "20-12-2018".date(for: .littleEndian) ?? Date(),
             endDate: "28-01-2019".date(for: .littleEndian) ?? Date(),
             month: "Februrary",
-            incomeFunds: [salaryFund],
-            expensesFunds: [apartmentFund, foodFund, stuffFund, baliFund, investmentFund],
+            funds: [salaryFund, apartmentFund, foodFund, stuffFund, baliFund, investmentFund],
             currencyCode: "EUR"
         )
         

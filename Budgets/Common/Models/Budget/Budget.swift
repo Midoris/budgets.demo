@@ -12,8 +12,7 @@ struct Budget {
     let startDate: Date
     let endDate: Date
     let month: String
-    let incomeFunds: [Fund]
-    let expensesFunds: [Fund]
+    let funds: [Fund]
     let currencyCode: String
 }
 
@@ -34,8 +33,8 @@ extension Fund {
 
 enum FundType: String {
     case income
-    case recurring
     case expense
+    case recurring
     case saving
 }
 

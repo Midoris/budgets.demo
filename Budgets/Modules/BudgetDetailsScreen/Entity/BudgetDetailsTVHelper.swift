@@ -13,7 +13,7 @@ struct BudgetDetailsTVHelper {
     static func getDS(from budget: Budget) -> [BudgetDetailsTVCellType] {
         
         let incomeFunds = budget.incomeFunds
-        let normalExpenses = budget.expensesFunds.filter { $0.type == .normal }
+        let normalExpenses = budget.expensesFunds.filter { $0.type == .expense }
         let recuringExpenses = budget.expensesFunds.filter { $0.type == .recurring }
         let savingsExpenses = budget.expensesFunds.filter { $0.type == .saving }
         

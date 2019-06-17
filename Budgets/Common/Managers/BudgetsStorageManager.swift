@@ -43,7 +43,7 @@ struct BudgetsStorageManager {
         let foodFund = Fund(
             name: "Food",
             amount: 300.0,
-            type: .normal,
+            type: .expense,
             entries: [foodEntry1, foodEntry2]
         )
         let stuffEntry = FundEntry(date: "09-01-2019".date(for: .littleEndian) ?? Date(),
@@ -53,7 +53,7 @@ struct BudgetsStorageManager {
         let stuffFund = Fund(
             name: "Clothes",
             amount: 200.0,
-            type: .normal,
+            type: .expense,
             entries: [stuffEntry]
         )
         let baliEntry = FundEntry(date: "20-12-2018".date(for: .littleEndian) ?? Date(),

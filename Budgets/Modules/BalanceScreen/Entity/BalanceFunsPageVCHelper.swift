@@ -13,7 +13,7 @@ struct BalanceFunsPageVCHelper {
     static func getContentControllers(for funds: [Fund], and currencyCode: String) -> [UIViewController] {
         
         let recurringFunds = funds.filter { $0.type == .recurring }
-        let normalFunds = funds.filter { $0.type == .normal }
+        let normalFunds = funds.filter { $0.type == .expense }
         let savingFunds = funds.filter { $0.type == .saving }
         
         var controllers: [UIViewController] = []

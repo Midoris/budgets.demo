@@ -45,8 +45,9 @@ extension BudgetDetailsScreenRouter {
     fileprivate func openNewFundScreen(with funds: [Fund]?) {
         guard let controller = AddFundViewController.instance else { return }
         controller.selectedFunds = funds
-        let navController = UINavigationController(rootViewController: controller)
-        self.viewController?.present(navController, animated: true, completion: nil)
+        self.viewController?.navigationController?.pushViewController(controller, animated: true)
+//        let navController = UINavigationController(rootViewController: controller)
+//        self.viewController?.present(navController, animated: true, completion: nil)
     }
     
 }

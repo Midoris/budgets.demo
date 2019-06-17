@@ -32,18 +32,36 @@ extension Fund {
     }
 }
 
+enum FundType: String {
+    case income
+    case recurring
+    case expense
+    case saving
+}
+
+extension FundType {
+    var name: String {
+        switch self {
+        case .income: return "Income"
+        case .recurring: return "Recurring"
+        case .expense: return "Expense"
+        case .saving: return "Saving"
+        }
+    }
+}
+
 struct FundEntry: Equatable, Hashable {
     let date: Date
     let amount: Double
     let description: String
 }
 
-enum FundType: String {
-    case income
-    case recurring
-    case normal
-    case saving
+enum EntryType: Equatable, Hashable {
+    case listing
+    case expense
 }
+
+
 
 
 /*

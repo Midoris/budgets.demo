@@ -75,7 +75,7 @@ extension BudgetCellViewModel {
         let incomeTotal = budget.incomeFunds
             .map { $0.amount }
             .reduce(0, +)
-        let expensesTotal = budget.expensesFunds.filter { $0.type == .normal || $0.type == .recurring }
+        let expensesTotal = budget.expensesFunds.filter { $0.type == .expense || $0.type == .recurring }
             .map { $0.amount }
             .reduce(0, +)
         let savingsTotal = budget.expensesFunds.filter { $0.type == .saving }

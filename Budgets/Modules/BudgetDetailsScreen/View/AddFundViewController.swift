@@ -29,13 +29,13 @@ class AddFundViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneButtonTapped))
         
         guard let _selectedFunds = selectedFunds else { return }
-        self.typeTextField.text = _selectedFunds.first?.type.rawValue
+        self.typeTextField.text = _selectedFunds.first?.type.name
         self.nameTextField.text = _selectedFunds.first?.name
         self.amountTextField.text = String(_selectedFunds.map { $0.amount }.reduce(0, +))
     }
     
     @objc private func doneButtonTapped() {
-        self.dismiss(animated: true, completion:   nil)
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

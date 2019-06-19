@@ -31,11 +31,12 @@ extension Fund {
     }
 }
 
-enum FundType: String {
+enum FundType: Equatable, Hashable {
     case income
     case expense
     case recurring
     case saving
+    case custom(String)
 }
 
 extension FundType {
@@ -45,6 +46,7 @@ extension FundType {
         case .recurring: return "Recurring"
         case .expense: return "Expense"
         case .saving: return "Saving"
+        case .custom(let name): return name
         }
     }
 }
@@ -58,6 +60,68 @@ struct FundEntry: Equatable, Hashable {
 enum EntryType: Equatable, Hashable {
     case listing
     case expense
+}
+
+func ==(left: FundType, right: FundType) -> Bool {
+    switch left {
+        
+    case .income:
+        switch right {
+        case .income: return true
+        default: return false
+        }
+    case .expense:
+        switch right {
+        case .expense: return true
+        default: return false
+        }
+    case .recurring:
+        switch right {
+        case .recurring: return true
+        default: return false
+        }
+    case .saving:
+        switch right {
+        case .saving: return true
+        default: return false
+        }
+    case .custom(let leftName):
+        switch right {
+        case .custom(let rightName): return leftName == rightName
+        default: return false
+        }
+    }
+}
+
+func !=(left: FundType, right: FundType) -> Bool {
+    switch left {
+        
+    case .income:
+        switch right {
+        case .income: return false
+        default: return true
+        }
+    case .expense:
+        switch right {
+        case .expense: return false
+        default: return true
+        }
+    case .recurring:
+        switch right {
+        case .recurring: return false
+        default: return true
+        }
+    case .saving:
+        switch right {
+        case .saving: return false
+        default: return true
+        }
+    case .custom(let leftName):
+        switch right {
+        case .custom(let rightName): return leftName != rightName
+        default: return true
+        }
+    }
 }
 
 

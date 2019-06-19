@@ -57,8 +57,7 @@ extension BalanceScreenPresenter {
         guard let lastBadget = budgets.last else { return }
         
         view?.handle(command: .updateUI(lastBadget))
-        let notIncomeFunds = lastBadget.funds.filter { $0.type != .income }
-        pageVC?.handle(command: .prepareContetnt(funds: notIncomeFunds, currency: lastBadget.currencyCode))
+        pageVC?.handle(command: .prepareContetnt(funds: lastBadget.funds, currency: lastBadget.currencyCode))
     }
     
 }

@@ -76,8 +76,7 @@ extension HistoryScreenViewController: HistoryScreenViewPresenterOutput {
         switch command {
         case .updateUI(let budget):
             self.updateLabels(with: budget)
-            let notIncomeFunds = budget.funds.filter { $0.type != .income }
-            self.preparePageVC(funds: notIncomeFunds, currencyCode: budget.currencyCode)
+            self.preparePageVC(budget: budget, funds: budget.funds, currencyCode: budget.currencyCode)
         case .updatePageProgress(let index):
             self.updatePageProgress(index: index)
         }
@@ -94,7 +93,7 @@ extension HistoryScreenViewController {
 
     }
     
-    private func preparePageVC(funds: [Fund], currencyCode: String) {
+    private func preparePageVC(budget: Budget, funds: [Fund], currencyCode: String) {
         guard let _pageVC = self.pageVC else { return }
 
         let tabBarHeight = self.tabBarController?.tabBar.bounds.height ?? 0
@@ -114,7 +113,8 @@ extension HistoryScreenViewController {
         let controllers = HistoryFunsPageVCHelper.getContentControllers(
             for: funds,
             and: "",
-            presenter: nil
+            presenter: nil,
+            startDate: budget.startDate
         )
         
         pageControl.frame = CGRect(x: 0.0, y: _pageVC.view.frame.maxY, width: self.view.bounds.width, height: pageControlHeight)

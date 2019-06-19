@@ -45,8 +45,8 @@ extension BalanceScreenViewController: BalanceScreenViewPresenterOutput {
             
         case .updateUI(let budget):
             self.updateLabels(with: budget)
-            let notIncomeFunds = budget.funds.filter { $0.type != .income }
-            self.preparePageVC(funds: notIncomeFunds, currencyCode: budget.currencyCode)
+            
+            self.preparePageVC(funds: budget.funds, currencyCode: budget.currencyCode)
             
         case .updatePageProgress(let index):
             self.updatePageProgress(index: index)

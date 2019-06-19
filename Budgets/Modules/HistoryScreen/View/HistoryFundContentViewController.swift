@@ -19,6 +19,7 @@ class HistoryFundContentViewController: UIViewController {
     var contetnType: BFContetnType?
     var currencyCode: String?
     var funds: [Fund] = []
+    var startDate: Date?
     var pageIndex: Int = 0
 
     override func viewDidLoad() {
@@ -68,7 +69,8 @@ extension HistoryFundContentViewController {
         index: Int,
         contentType: BFContetnType,
         currencyCode: String,
-        presenter: HistoryFundsPageContentPresenterIntput?
+        presenter: HistoryFundsPageContentPresenterIntput?,
+        startDate: Date
         ) -> UIViewController {
         
         guard let contentVC = UIStoryboard(name: HistoryScreenBuilder.storyBoardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: HistoryFundContentViewController.self)) as? HistoryFundContentViewController else {
@@ -80,6 +82,7 @@ extension HistoryFundContentViewController {
         contentVC.contetnType = contentType
         contentVC.currencyCode = currencyCode
         contentVC.presenter = presenter
+        contentVC.startDate = startDate
         return contentVC
         
     }
@@ -87,6 +90,7 @@ extension HistoryFundContentViewController {
 
 protocol HistoryFundsEntriesTVScrollDelegate {
     func didScroll(visableEntries: [FundEntry], isAllVisable: Bool)
+    func didScrollToBottom()
 }
 
 extension HistoryFundContentViewController: HistoryFundsEntriesTVScrollDelegate {
@@ -116,8 +120,24 @@ extension HistoryFundContentViewController: HistoryFundsEntriesTVScrollDelegate 
         let entryDateString = firstEntry.date.string(for: .custom("dd MMMM"))
         let textToShow = isAllVisable ? "Current Balance" : "Balance on \(entryDateString)"
         
-        amountLabel.text = balanceText
+        self.amountLabel.text = balanceText
         self.balanceDateLabel.text = textToShow
+    }
+    
+    func didScrollToBottom() {
+        guard
+            let _currencyCode = self.currencyCode,
+            let _startDate = self.startDate else { return }
+        
+        let totalAmount = self.funds.map { $0.amount }.reduce(0, +)
+        let roundedAmount = Double(round(100*totalAmount)/100)
+        let currencySymbol = CurrencyManager
+            .getCurrencyFromCode(code: _currencyCode)?.symol ?? ""
+        let balanceText = "\(roundedAmount) \(currencySymbol)"
+        let dateString = _startDate.string(for: .custom("dd MMMM"))
+        
+        self.amountLabel.text = balanceText
+        self.balanceDateLabel.text = "Balance on \(dateString)"
     }
     
     

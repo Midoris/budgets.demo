@@ -20,7 +20,7 @@ class HistoryFundsEntriesTableView: UITableView {
     
     var entries: [FundEntry] = [] {
         didSet {
-            self.ds = HistoryFundEntriesTableViewHelper.prepareDataSource(entries: entries, currency: "EUR")
+            self.ds = HistoryFundEntriesTableViewHelper.prepareDataSource(entries: entries.sorted { $0.date > $1.date }, currency: "EUR")
         }
     }
     var ds: [HistoryFundsCellType] = [] {
@@ -60,7 +60,11 @@ extension HistoryFundsEntriesTableView {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        guard let topVisibleIndexPath:IndexPath = self.indexPathsForVisibleRows?.first else { return }
+        guard let topVisibleIndexPath:IndexPath = self.indexPathsForVisibleRows?.first else {
+            self.scrollingDelegate?.didScrollToBottom()
+            return
+            
+        }
         
         let allEntries: [FundEntry] = self.ds.map { type -> FundEntry? in
             switch type {

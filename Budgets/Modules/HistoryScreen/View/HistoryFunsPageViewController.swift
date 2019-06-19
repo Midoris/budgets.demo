@@ -60,19 +60,20 @@ protocol HistoryFundsPageVCPresenterOutput: class {
 }
 
 enum HFPageViewCommand {
-    case prepareContetnt(funds: [Fund], currency: String)
+    case prepareContetnt(funds: [Fund], currency: String, startDate: Date)
 }
 
 extension HistoryFunsPageViewController: HistoryFundsPageVCPresenterOutput {
     func handle(command: HFPageViewCommand) {
         switch command {
             
-        case .prepareContetnt(let funds, let currencyCode):
+        case .prepareContetnt(let funds, let currencyCode, let startDate):
             
             let controllers = HistoryFunsPageVCHelper.getContentControllers(
                 for: funds,
                 and: currencyCode,
-                presenter: self.presenter as? HistoryFundsPageContentPresenterIntput
+                presenter: self.presenter as? HistoryFundsPageContentPresenterIntput,
+                startDate: startDate
             )
 
             self.pages = controllers

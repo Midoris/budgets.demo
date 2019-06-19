@@ -12,6 +12,7 @@ struct BalanceFunsPageVCHelper {
     
     static func getContentControllers(for funds: [Fund], and currencyCode: String) -> [UIViewController] {
         
+        let notIncomeFunds = funds.filter { $0.type != .income }
         let recurringFunds = funds.filter { $0.type == .recurring }
         let normalFunds = funds.filter { $0.type == .expense }
         let savingFunds = funds.filter { $0.type == .saving }
@@ -19,7 +20,7 @@ struct BalanceFunsPageVCHelper {
         var controllers: [UIViewController] = []
         
         controllers.append(
-            BalanceFundContentViewController.getInstatnce(funds: funds,
+            BalanceFundContentViewController.getInstatnce(funds: notIncomeFunds,
                                                           index: 0,
                                                           contentType: .total,
                                                           currencyCode: currencyCode)

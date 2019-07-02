@@ -15,7 +15,7 @@ protocol BudgetDetailsScreenRouterInput: class {
 }
 
 enum BudgetDetailsScreenRoute {
-    case addFundScreen([Fund]?)
+    case addFundScreen([Fund]?, Budget?)
 }
 
 class BudgetDetailsScreenRouter {
@@ -34,7 +34,7 @@ extension BudgetDetailsScreenRouter: BudgetDetailsScreenRouterInput {
     
     func handle(route: BudgetDetailsScreenRoute) {
         switch route {
-        case .addFundScreen(let funds): self.openNewFundScreen(with: funds)
+        case .addFundScreen(let funds, let budget): self.openNewFundScreen(with: funds, and: budget)
         }
     }
     
@@ -42,12 +42,11 @@ extension BudgetDetailsScreenRouter: BudgetDetailsScreenRouterInput {
 
 extension BudgetDetailsScreenRouter {
     
-    fileprivate func openNewFundScreen(with funds: [Fund]?) {
+    fileprivate func openNewFundScreen(with funds: [Fund]?, and budget: Budget?) {
         guard let controller = AddFundViewController.instance else { return }
-        controller.selectedFunds = funds
+        controller.preselectedFund = funds?.first
+        controller.budget = budget
         self.viewController?.navigationController?.pushViewController(controller, animated: true)
-//        let navController = UINavigationController(rootViewController: controller)
-//        self.viewController?.present(navController, animated: true, completion: nil)
     }
     
 }

@@ -44,7 +44,7 @@ extension BudgetDetailsScreenPresenter: BudgetDetailsScreenPresenterInput {
     func handle(event: BudgetDetailsScreenVCEvent) {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
-        case .addNewFundTapped: self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(nil))
+        case .addNewFundTapped: self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(nil, self.selecteBudget))
         case .fundCellSelected(let funds):
             self.hendleFundCellSelected(with: funds)
         }
@@ -60,7 +60,7 @@ extension BudgetDetailsScreenPresenter {
     }
     
     fileprivate func hendleFundCellSelected(with funds: [Fund]) {
-        self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(funds))
+        self.router.handle(route: BudgetDetailsScreenRoute.addFundScreen(funds, self.selecteBudget))
     }
 
 }

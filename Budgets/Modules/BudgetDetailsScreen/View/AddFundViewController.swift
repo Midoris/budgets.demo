@@ -75,6 +75,7 @@ class AddFundViewController: UIViewController {
         let alert = UIAlertController(title: "Fund Name", message: "", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.text = self.selectedName ?? ""
+            textField.autocapitalizationType = .words
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in

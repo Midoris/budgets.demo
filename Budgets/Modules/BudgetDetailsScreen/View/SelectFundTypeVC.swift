@@ -41,8 +41,7 @@ class SelectFundTypeVC: UIViewController {
         
         let alert = UIAlertController(title: "Fund Type", message: "", preferredStyle: .alert)
         alert.addTextField { (textField) in
-            
-            
+            textField.autocapitalizationType = .words
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in

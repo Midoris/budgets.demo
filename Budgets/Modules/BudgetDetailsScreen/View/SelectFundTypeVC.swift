@@ -17,7 +17,12 @@ class SelectFundTypeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var delegate: SelectFundTypeDelegate?
     var preselectedFundType: FundType?
-    var ds: [FundType] = [FundType.income, FundType.expense, FundType.saving, FundType.recurring]
+    var fundTypes: [FundType] = [
+        FundType.income,
+        FundType.expense,
+        FundType.saving,
+        FundType.recurring
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +30,19 @@ class SelectFundTypeVC: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+        self.loadCustomFundTypes()
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(cancelButtonTapped))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonTapped))
         
         self.navigationItem.title = "Select Fund Type"
 
+    }
+    
+    private func loadCustomFundTypes() {
+        let customTypes = UserDefaultsManager.customFundTypes
+        self.fundTypes.append(contentsOf: customTypes)
     }
     
     @objc private func cancelButtonTapped() {
@@ -60,25 +72,53 @@ class SelectFundTypeVC: UIViewController {
     
     private func saveNewType(typeName: String) {
         let newType = FundType.custom(typeName)
-        self.ds.append(newType)
+        saveNewTypeToUserDefaluts(newType: newType)
+        self.fundTypes.append(newType)
         self.tableView.reloadData()
+    }
+    
+    private func removeType(typeToRemove: FundType) {
+        removeFromUserDefaults(typeToRemove: typeToRemove)
+        let filteredTypes = self.fundTypes.filter { $0 != typeToRemove }
+        self.fundTypes = filteredTypes
+    }
+    
+    private func saveNewTypeToUserDefaluts(newType: FundType) {
+        var customTypes = UserDefaultsManager.customFundTypes
+        customTypes.append(newType)
+        UserDefaultsManager.customFundTypes = customTypes
+    }
+    
+    private func removeFromUserDefaults(typeToRemove: FundType) {
+        let customTypes = UserDefaultsManager.customFundTypes
+        let typesToSave = customTypes.filter { $0 != typeToRemove }
+        UserDefaultsManager.customFundTypes = typesToSave
     }
 
 }
 
 extension SelectFundTypeVC: UITableViewDataSource {
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.ds.count
+        return self.fundTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        guard let fundType = self.ds[safe: indexPath.row] else {
-            return cell
+        guard let fundType = self.fundTypes[safe: indexPath.row] else {
+            return UITableViewCell()
         }
+        
+        let cell: UITableViewCell
+        
+        switch fundType {
+        case .custom:
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+            cell.detailTextLabel?.text = "Custom Type"
+        default:
+            cell = UITableViewCell()
+        }
+
         cell.textLabel?.text = fundType.name
         cell.accessoryType = fundType == preselectedFundType ? .checkmark : .none
         
@@ -88,12 +128,30 @@ extension SelectFundTypeVC: UITableViewDataSource {
 }
 
 extension SelectFundTypeVC: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedType = self.ds[safe: indexPath.row] else {
+        guard let selectedType = self.fundTypes[safe: indexPath.row] else {
             return
         }
         delegate?.typeSelected(type: selectedType)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard
+            let typeToRemove = self.fundTypes[safe: indexPath.row]
+            else { return }
+        
+        switch typeToRemove {
+        case .custom:
+            if editingStyle == .delete {
+                self.removeType(typeToRemove: typeToRemove)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        default: break
+        }
+
     }
 }
 

@@ -18,6 +18,7 @@ class AddFundViewController: UIViewController {
     
     var preselectedFund: Fund?
     var budget: Budget?
+    var comeFromrecurringFunds = false
     
     var selectedName: String? {
         didSet {
@@ -65,8 +66,21 @@ class AddFundViewController: UIViewController {
         self.navigationItem.title = "Edit Fund"
         self.selectedName = _selectedFund.name
         self.selectedType = _selectedFund.type
+        self.selectedAmount = _selectedFund.amount
         self.amountTextField.text = String(_selectedFund.amount)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if comeFromrecurringFunds {
+            self.selectedType = .recurring
+            self.typeButton.isEnabled = false
+        }
+    }
+    
+    func prepareForReccuring() {
+        comeFromrecurringFunds = true
     }
     
     @IBAction func nameButtonTapped(_ sender: UIButton) {

@@ -15,7 +15,7 @@ protocol BudgetDetailsScreenRouterInput: class {
 }
 
 enum BudgetDetailsScreenRoute {
-    case addFundScreen([Fund]?, Budget?)
+    case addFundScreen([Fund], Budget)
 }
 
 class BudgetDetailsScreenRouter {
@@ -42,11 +42,21 @@ extension BudgetDetailsScreenRouter: BudgetDetailsScreenRouterInput {
 
 extension BudgetDetailsScreenRouter {
     
-    fileprivate func openNewFundScreen(with funds: [Fund]?, and budget: Budget?) {
-        guard let controller = AddFundViewController.instance else { return }
-        controller.preselectedFund = funds?.first
-        controller.budget = budget
-        self.viewController?.navigationController?.pushViewController(controller, animated: true)
+    fileprivate func openNewFundScreen(with funds: [Fund], and budget: Budget) {
+        
+        let recurringFunds = funds.filter { $0.type == .recurring }
+        if funds.count > 0 && recurringFunds.count == funds.count {
+            guard let recurringFundsController = RecurringFundsViewController.instance else { return }
+            recurringFundsController.funds = recurringFunds
+            recurringFundsController.budget = budget
+            self.viewController?.navigationController?.pushViewController(recurringFundsController, animated: true)
+        } else {
+            guard let addFundController = AddFundViewController.instance else { return }
+            addFundController.preselectedFund = funds.first
+            addFundController.budget = budget
+            self.viewController?.navigationController?.pushViewController(addFundController, animated: true)
+        }
+        
     }
     
 }

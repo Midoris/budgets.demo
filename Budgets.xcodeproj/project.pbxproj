@@ -71,6 +71,8 @@
 		79811DFA21F1B25A006E6129 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */; };
 		79C6CFB122CB55C500D216D5 /* SelectFundTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB022CB55C500D216D5 /* SelectFundTypeVC.swift */; };
 		79C6CFB322CC629F00D216D5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB222CC629F00D216D5 /* UserDefaultsManager.swift */; };
+		79C6CFB522CC6EAC00D216D5 /* RecurringFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB422CC6EAC00D216D5 /* RecurringFundsViewController.swift */; };
+		79C6CFB722CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB622CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift */; };
 		79CE2EAA21F30A890048066A /* HistoryScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EA921F30A890048066A /* HistoryScreenBuilder.swift */; };
 		79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EAB21F30AB90048066A /* HistoryScreenRouter.swift */; };
 		79CE2EAE21F30ADD0048066A /* HistoryScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EAD21F30ADD0048066A /* HistoryScreenInteractor.swift */; };
@@ -179,6 +181,8 @@
 		79811DF921F1B25A006E6129 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		79C6CFB022CB55C500D216D5 /* SelectFundTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFundTypeVC.swift; sourceTree = "<group>"; };
 		79C6CFB222CC629F00D216D5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		79C6CFB422CC6EAC00D216D5 /* RecurringFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringFundsViewController.swift; sourceTree = "<group>"; };
+		79C6CFB622CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsRecurringFundCell.swift; sourceTree = "<group>"; };
 		79CE2EA921F30A890048066A /* HistoryScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenBuilder.swift; sourceTree = "<group>"; };
 		79CE2EAB21F30AB90048066A /* HistoryScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenRouter.swift; sourceTree = "<group>"; };
 		79CE2EAD21F30ADD0048066A /* HistoryScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenInteractor.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				7976A69522114D320079BF76 /* Cell */,
 				7976A68C220571F00079BF76 /* BudgetDetailsScreenViewController.swift */,
 				7976A6A022134B110079BF76 /* AddFundViewController.swift */,
+				79C6CFB422CC6EAC00D216D5 /* RecurringFundsViewController.swift */,
 				79C6CFB022CB55C500D216D5 /* SelectFundTypeVC.swift */,
 				7976A691220578080079BF76 /* BudgetDetailsTableView.swift */,
 				7976A68E2205721B0079BF76 /* BudgetDetailsScreen.storyboard */,
@@ -297,6 +302,7 @@
 				7976A69822114F3B0079BF76 /* BudgetDetailsFundCell.swift */,
 				7976A69A22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift */,
 				7976A69C2211F5BB0079BF76 /* BudgetDetailsTotalCell.swift */,
+				79C6CFB622CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -844,6 +850,7 @@
 				79811DBA21EA4B48006E6129 /* Sequence+extensions.swift in Sources */,
 				79C6CFB322CC629F00D216D5 /* UserDefaultsManager.swift in Sources */,
 				79811DD221EDBB76006E6129 /* BalanceFundContentViewController.swift in Sources */,
+				79C6CFB522CC6EAC00D216D5 /* RecurringFundsViewController.swift in Sources */,
 				79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */,
 				79CE2EB021F30B010048066A /* HistoryScreenPresenter.swift in Sources */,
 				7976A69B22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift in Sources */,
@@ -889,6 +896,7 @@
 				7976A69922114F3B0079BF76 /* BudgetDetailsFundCell.swift in Sources */,
 				79811DC221ED1284006E6129 /* BalanceScreenViewController.swift in Sources */,
 				79811DEF21F19E65006E6129 /* CHIPageControlPaprika.swift in Sources */,
+				79C6CFB722CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift in Sources */,
 				79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */,
 				79811DD021EDBAAA006E6129 /* BalancePageViewController.swift in Sources */,
 				7976A684220571440079BF76 /* BudgetDetailsScreenRouter.swift in Sources */,

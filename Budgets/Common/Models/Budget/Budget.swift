@@ -16,7 +16,7 @@ struct Budget {
     let currencyCode: String
 }
 
-struct Fund {
+struct Fund: Equatable, Hashable {
     let name: String
     let amount: Double
     let type: FundType

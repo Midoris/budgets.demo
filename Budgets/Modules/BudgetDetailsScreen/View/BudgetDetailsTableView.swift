@@ -62,5 +62,38 @@ extension BudgetDetailsTableView: UITableViewDelegate {
         default: break
         }
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+         guard let cellType = ds[safe: indexPath.row] else { return .none }
+        
+        switch cellType {
+            
+        
+        case .fund(let vm):
+
+            let fundTypes = vm.funds.map { $0.type }.unique()
+            guard let firstFundType = fundTypes.first else {
+                return .none
+            }
+
+            switch firstFundType {
+
+            case .recurring:
+                return .none
+            default:
+                return .delete
+            }
+            
+        default: return .none
+        
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        //TODO implement deletion
+        //self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 

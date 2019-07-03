@@ -24,6 +24,7 @@ class BudgetDetailsFundCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .default
     }
 
 

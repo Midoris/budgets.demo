@@ -137,21 +137,28 @@ extension SelectFundTypeVC: UITableViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        guard
+            let type = self.fundTypes[safe: indexPath.row]
+            else { return  .none }
+        
+        switch type {
+        case .custom:
+            return .delete
+        default: return .none
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         guard
             let typeToRemove = self.fundTypes[safe: indexPath.row]
             else { return }
-        
-        switch typeToRemove {
-        case .custom:
-            if editingStyle == .delete {
-                self.removeType(typeToRemove: typeToRemove)
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
-        default: break
+        if editingStyle == .delete {
+            self.removeType(typeToRemove: typeToRemove)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-
     }
 }
 

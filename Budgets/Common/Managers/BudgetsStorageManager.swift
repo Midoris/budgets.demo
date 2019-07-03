@@ -28,9 +28,15 @@ struct BudgetsStorageManager {
         )
         let apartmentFund = Fund(
             name: "Apartment",
-            amount: 1100.0,
+            amount: 1000.0,
             type: .recurring,
             entries: [apartmentEntry]
+        )
+        let electricityFund = Fund(
+            name: "Electricity",
+            amount: 54.0,
+            type: .recurring,
+            entries: []
         )
         let foodEntry1 = FundEntry(date: "05-01-2019".date(for: .littleEndian) ?? Date(),
                                   amount: -51.1,
@@ -80,7 +86,7 @@ struct BudgetsStorageManager {
             startDate: "20-12-2018".date(for: .littleEndian) ?? Date(),
             endDate: "28-01-2019".date(for: .littleEndian) ?? Date(),
             month: "Februrary",
-            funds: [salaryFund, apartmentFund, foodFund, stuffFund, baliFund, investmentFund],
+            funds: [salaryFund, apartmentFund, electricityFund, foodFund, stuffFund, baliFund, investmentFund],
             currencyCode: "EUR"
         )
         

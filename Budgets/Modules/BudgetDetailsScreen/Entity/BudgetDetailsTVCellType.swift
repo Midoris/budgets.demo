@@ -18,7 +18,7 @@ enum BudgetDetailsTVCellType {
 extension BudgetDetailsTVCellType {
     
     
-    func cell(for tableView: BudgetDetailsTableView, at indexPath: IndexPath) -> UITableViewCell {
+    func cell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         
         switch self {
             

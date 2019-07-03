@@ -21,3 +21,18 @@ extension Sequence where Iterator.Element: Hashable {
         }
     }
 }
+
+extension Sequence {
+    func unorderedGroups<G: Hashable>(by predicate: (Element) -> G) -> [[Element]] {
+        return Array(Dictionary(grouping: self, by: predicate).values)
+    }
+    
+    func orderedGroups<G: Hashable>(by predicate: (Element) -> G,
+                                    orderBy: ((Element, Element) -> Bool)) -> [[Element]] {
+        
+        let unorderedGroups = self.unorderedGroups(by: predicate)
+        let orderedGroups = unorderedGroups.sorted(by: { orderBy($0[0], $1[0]) })
+        return orderedGroups
+        
+    }
+}

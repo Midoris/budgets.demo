@@ -49,6 +49,16 @@ extension FundType {
         case .custom(let name): return name
         }
     }
+    
+    var sortDescripter: Int {
+        switch self {
+        case .income: return 1
+        case .recurring: return 2
+        case .expense: return 3
+        case .saving: return 4
+        case .custom: return 5
+        }
+    }
 }
 
 struct FundEntry: Equatable, Hashable {

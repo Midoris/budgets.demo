@@ -62,7 +62,7 @@ extension BalanceScreenViewController {
     
     private func preparePageVC(funds: [Fund], currencyCode: String) {
         guard let _pageVC = self.pageVC else { return }
-        _pageVC.view.frame = CGRect(x: 16, y: 240.0, width: self.view.bounds.width - 32, height: 240.0)
+        _pageVC.view.frame = CGRect(x: 0, y: 240.0, width: self.view.bounds.width, height: 240.0)
         self.view.addSubview(_pageVC.view)
         _pageVC.didMove(toParent: self)
         

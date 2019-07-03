@@ -34,6 +34,8 @@ class BalanceFundContentViewController: UIViewController {
             
         case .recurring:
             self.fundNameLabel.text = "Recurring"
+        case .custom(let name):
+            self.fundNameLabel.text = name
         }
         
         let currencySymbol = CurrencyManager
@@ -70,4 +72,5 @@ enum BFContetnType {
     case recurring
     case normal
     case savings
+    case custom(String)
 }

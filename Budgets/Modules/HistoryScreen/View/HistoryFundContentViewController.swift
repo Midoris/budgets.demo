@@ -51,6 +51,8 @@ class HistoryFundContentViewController: UIViewController {
             
         case .recurring:
             self.fundNameLabel.text = "Recurring"
+        case .custom(let name):
+            self.fundNameLabel.text = name
         }
         
         let currencySymbol = CurrencyManager

@@ -77,11 +77,13 @@ struct BudgetsStorageManager {
                                         description: ""
         )
         let investmentFund = Fund(
-            name: "Investments",
+            name: "My App Business",
             amount: 1000.0,
-            type: .saving,
+            type: .custom("Investments"),
             entries: [investmentEntry]
         )
+        
+        
         let budget = Budget(
             startDate: "20-12-2018".date(for: .littleEndian) ?? Date(),
             endDate: "28-01-2019".date(for: .littleEndian) ?? Date(),

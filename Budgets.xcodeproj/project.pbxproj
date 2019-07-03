@@ -73,6 +73,7 @@
 		79C6CFB322CC629F00D216D5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB222CC629F00D216D5 /* UserDefaultsManager.swift */; };
 		79C6CFB522CC6EAC00D216D5 /* RecurringFundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB422CC6EAC00D216D5 /* RecurringFundsViewController.swift */; };
 		79C6CFB722CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB622CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift */; };
+		79C6CFB922CCB9FA00D216D5 /* Optional+wxtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6CFB822CCB9FA00D216D5 /* Optional+wxtension.swift */; };
 		79CE2EAA21F30A890048066A /* HistoryScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EA921F30A890048066A /* HistoryScreenBuilder.swift */; };
 		79CE2EAC21F30AB90048066A /* HistoryScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EAB21F30AB90048066A /* HistoryScreenRouter.swift */; };
 		79CE2EAE21F30ADD0048066A /* HistoryScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE2EAD21F30ADD0048066A /* HistoryScreenInteractor.swift */; };
@@ -183,6 +184,7 @@
 		79C6CFB222CC629F00D216D5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		79C6CFB422CC6EAC00D216D5 /* RecurringFundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringFundsViewController.swift; sourceTree = "<group>"; };
 		79C6CFB622CC760400D216D5 /* BudgetDetailsRecurringFundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsRecurringFundCell.swift; sourceTree = "<group>"; };
+		79C6CFB822CCB9FA00D216D5 /* Optional+wxtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+wxtension.swift"; sourceTree = "<group>"; };
 		79CE2EA921F30A890048066A /* HistoryScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenBuilder.swift; sourceTree = "<group>"; };
 		79CE2EAB21F30AB90048066A /* HistoryScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenRouter.swift; sourceTree = "<group>"; };
 		79CE2EAD21F30ADD0048066A /* HistoryScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenInteractor.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				79811DB521E867F0006E6129 /* Colection+extensions.swift */,
 				79811DB921EA4B48006E6129 /* Sequence+extensions.swift */,
 				79CE2ECE21FCE5EA0048066A /* Date+extensions.swift */,
+				79C6CFB822CCB9FA00D216D5 /* Optional+wxtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 				79811DA821E719AD006E6129 /* BudgetCell.swift in Sources */,
 				79CE2EB021F30B010048066A /* HistoryScreenPresenter.swift in Sources */,
 				7976A69B22114F6C0079BF76 /* BudgetDetailsSectionTotalCell.swift in Sources */,
+				79C6CFB922CCB9FA00D216D5 /* Optional+wxtension.swift in Sources */,
 				7976A692220578080079BF76 /* BudgetDetailsTableView.swift in Sources */,
 				79811D8E21E5BFEC006E6129 /* RootRouter.swift in Sources */,
 				79811DA521E71352006E6129 /* BudgetsTableView.swift in Sources */,

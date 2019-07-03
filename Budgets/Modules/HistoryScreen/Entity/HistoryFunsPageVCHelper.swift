@@ -17,11 +17,22 @@ struct HistoryFunsPageVCHelper {
         let normalFunds = funds.filter { $0.type == .expense }
         let savingFunds = funds.filter { $0.type == .saving }
         
+        var allCustomFundTypes: [Fund] = []
+        funds.forEach { fund in
+            switch fund.type {
+            case .custom:
+                allCustomFundTypes.append(fund)
+            default: break
+            }
+        }
+        
+        let groupsOfCustomFunds = allCustomFundTypes.unorderedGroups(by: { $0.type })
+        
         var controllers: [UIViewController] = []
         
         controllers.append(
             HistoryFundContentViewController.getInstatnce(funds: notIncomeFunds,
-                                                          index: 0,
+                                                          index: controllers.count,
                                                           contentType: .total,
                                                           currencyCode: currencyCode,
                                                           presenter: presenter,
@@ -58,6 +69,19 @@ struct HistoryFunsPageVCHelper {
                                                               startDate: startDate)
             )
         }
+        
+        for group in groupsOfCustomFunds {
+            guard let firtFund = group.first else { continue }
+            controllers.append(
+                HistoryFundContentViewController.getInstatnce(funds: group,
+                                                              index: controllers.count,
+                                                              contentType: .custom(firtFund.type.name),
+                                                              currencyCode: currencyCode,
+                                                              presenter: presenter,
+                                                              startDate: startDate)
+            )
+        }
+        
         
         return controllers
     }

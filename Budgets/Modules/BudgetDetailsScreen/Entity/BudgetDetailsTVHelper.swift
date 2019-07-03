@@ -17,6 +17,17 @@ struct BudgetDetailsTVHelper {
         let recuringExpenses = budget.funds.filter { $0.type == .recurring }
         let savingsExpenses = budget.funds.filter { $0.type == .saving }
         
+        var allCustomFundTypes: [Fund] = []
+        budget.funds.forEach { fund in
+            switch fund.type {
+            case .custom:
+                allCustomFundTypes.append(fund)
+            default: break
+            }
+        }
+        
+        let groupsOfCustomFunds = allCustomFundTypes.unorderedGroups(by: { $0.type })
+        
         var cellTypes: [BudgetDetailsTVCellType] = []
         cellTypes.append(
             BudgetDetailsTVCellType.title(BudgetDetailsSectionTittleCellVM(title: "Income:"))
@@ -54,6 +65,17 @@ struct BudgetDetailsTVHelper {
         
         cellTypes.append(BudgetDetailsTVCellType.sectionTotal(BudgetDetailsSectionTotalCellVM(funds: savingsExpenses, currencyCode: budget.currencyCode)))
         
+        groupsOfCustomFunds.forEach { customFunds in
+            cellTypes.append(BudgetDetailsTVCellType.title(BudgetDetailsSectionTittleCellVM(title: "\(customFunds.first?.type.name ?? ""):")))
+            
+            customFunds.forEach { fund in
+                cellTypes.append(
+                    BudgetDetailsTVCellType.fund(BudgetDetailsFundCellVM(funds: [fund], currencyCode: budget.currencyCode))
+                )
+            }
+            cellTypes.append(BudgetDetailsTVCellType.sectionTotal(BudgetDetailsSectionTotalCellVM(funds: customFunds, currencyCode: budget.currencyCode)))
+            
+        }
         
         
         cellTypes.append(BudgetDetailsTVCellType.balance(BudgetDetailsTotalCellVM(budget: budget)))

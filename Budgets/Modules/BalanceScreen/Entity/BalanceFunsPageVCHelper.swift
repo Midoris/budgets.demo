@@ -17,6 +17,17 @@ struct BalanceFunsPageVCHelper {
         let normalFunds = funds.filter { $0.type == .expense }
         let savingFunds = funds.filter { $0.type == .saving }
         
+        var allCustomFundTypes: [Fund] = []
+        funds.forEach { fund in
+            switch fund.type {
+            case .custom:
+                allCustomFundTypes.append(fund)
+            default: break
+            }
+        }
+        
+        let groupsOfCustomFunds = allCustomFundTypes.unorderedGroups(by: { $0.type })
+        
         var controllers: [UIViewController] = []
         
         controllers.append(
@@ -49,6 +60,17 @@ struct BalanceFunsPageVCHelper {
                                                               contentType: .savings,
                                                               currencyCode: currencyCode)
             )
+        }
+        
+        for group in groupsOfCustomFunds {
+            guard let firstFund = group.first else { continue }
+            controllers.append(
+                BalanceFundContentViewController.getInstatnce(funds: group,
+                                                              index: controllers.count,
+                                                              contentType: .custom(firstFund.type.name),
+                                                              currencyCode: currencyCode)
+            )
+            
         }
         
         return controllers

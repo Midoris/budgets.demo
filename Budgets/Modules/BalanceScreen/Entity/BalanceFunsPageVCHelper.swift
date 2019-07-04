@@ -67,7 +67,7 @@ struct BalanceFunsPageVCHelper {
             controllers.append(
                 BalanceFundContentViewController.getInstatnce(funds: group,
                                                               index: controllers.count,
-                                                              contentType: .custom(firstFund.type.name),
+                                                              contentType: .custom(firstFund.name),
                                                               currencyCode: currencyCode)
             )
             

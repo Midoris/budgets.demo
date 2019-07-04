@@ -75,7 +75,7 @@ struct HistoryFunsPageVCHelper {
             controllers.append(
                 HistoryFundContentViewController.getInstatnce(funds: group,
                                                               index: controllers.count,
-                                                              contentType: .custom(firtFund.type.name),
+                                                              contentType: .custom(firtFund.name),
                                                               currencyCode: currencyCode,
                                                               presenter: presenter,
                                                               startDate: startDate)

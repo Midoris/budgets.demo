@@ -51,5 +51,9 @@ extension BudgetDetailsScreenViewController: BudgetDetailsScreenViewPresenterOut
 extension BudgetDetailsScreenViewController {
     private func handleUpdateUI(with budget: Budget) {
         self.tableView.selectedBudget = budget
+        
+        let month = budget.month
+        let dates = "\(budget.startDate.string(for: .short)) - \(budget.endDate.string(for: .short))"
+        self.navigationItem.titleView = UIView.getTitleSubtitleView(title: month, subtitle: dates)
     }
 }

@@ -19,11 +19,11 @@ class BudgetsTableView: UITableView {
     }
     var budgets: [Budget] = [] {
         didSet {
-            self.ds = budgets.map { BudgetCellViewModel(budget: $0) }
+            self.ds = budgets.map { BudgetCell2ViewModel(budget: $0) }
         }
     }
     
-    var ds: [BudgetCellViewModel] = [] {
+    var ds: [BudgetCell2ViewModel] = [] {
         didSet {
             self.reloadData()
         }

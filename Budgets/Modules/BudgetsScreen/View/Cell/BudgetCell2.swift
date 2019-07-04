@@ -1,5 +1,5 @@
 //
-//  BudgetCell.swift
+//  BudgetCell2.swift
 //  Budgets
 //
 //  Created by IEVGENII IABLONSKYI on 04.07.19.
@@ -34,7 +34,7 @@ class BudgetCell: UITableViewCell {
             self.datesLabel.text = vm.dates
             self.balanceTitleLabel.text = vm.balanceTitle
             self.balanceAmountLabel.text = vm.balanceAmount
-            
+          
             vm.stackItems.enumerated().forEach { pair in
                 let twoLabelView = TwoLabelsView(frame: .zero)
                 twoLabelView.leftLabel.text = pair.element.0
@@ -99,7 +99,7 @@ extension BudgetCell2ViewModel {
         }
         
         for group in groupedCustomFunds {
-            
+        
             guard let firstItem = group.first else { continue }
             
             let total = group

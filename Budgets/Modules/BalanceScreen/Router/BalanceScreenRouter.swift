@@ -15,6 +15,7 @@ protocol BalanceScreenRouterInput: class {
 }
 
 enum BalanceScreenRoute {
+    case balanceEntryScreen(AddEntryButtonType)
 }
 
 class BalanceScreenRouter {
@@ -32,7 +33,14 @@ extension BalanceScreenRouter: BalanceScreenRouterInput {
     }
     
     func handle(route: BalanceScreenRoute) {
-        
+        switch route {
+            
+        case .balanceEntryScreen(let type):
+            guard let controller = BalanceEntryViewController.instance else { return }
+            let navController = UINavigationController(rootViewController: controller)
+            // TODO: Use type
+            self.viewController?.present(navController, animated: true, completion: nil)
+        }
     }
     
 }

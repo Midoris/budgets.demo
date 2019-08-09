@@ -18,7 +18,7 @@ struct BudgetsStorageManager {
         )
         let salaryFund = Fund(
             name: "Salary",
-            amount: 3500.0,
+            amount: 6400.0,
             type: .income,
             entries: [salaryEntry]
         )
@@ -62,23 +62,23 @@ struct BudgetsStorageManager {
             type: .expense,
             entries: [stuffEntry]
         )
-        let baliEntry = FundEntry(date: "20-12-2018".date(for: .littleEndian) ?? Date(),
-                                  amount: -900.0,
+        let travelEntry = FundEntry(date: "20-12-2018".date(for: .littleEndian) ?? Date(),
+                                  amount: -1500.0,
                                   description: ""
         )
-        let baliFund = Fund(
-            name: "Bali",
-            amount: 900.0,
+        let travelFund = Fund(
+            name: "Travaling",
+            amount: 1500.0,
             type: .saving,
-            entries: [baliEntry]
+            entries: [travelEntry]
         )
         let investmentEntry = FundEntry(date: "20-12-2018".date(for: .littleEndian) ?? Date(),
-                                        amount: -1000,
+                                        amount: -3000,
                                         description: ""
         )
         let investmentFund = Fund(
-            name: "My App Business",
-            amount: 1000.0,
+            name: "Business",
+            amount: 3000.0,
             type: .custom("Investments"),
             entries: [investmentEntry]
         )
@@ -88,7 +88,7 @@ struct BudgetsStorageManager {
             startDate: "20-12-2018".date(for: .littleEndian) ?? Date(),
             endDate: "28-01-2019".date(for: .littleEndian) ?? Date(),
             month: "Februrary",
-            funds: [salaryFund, apartmentFund, electricityFund, foodFund, stuffFund, baliFund, investmentFund],
+            funds: [salaryFund, apartmentFund, electricityFund, foodFund, stuffFund, travelFund, investmentFund],
             currencyCode: "EUR"
         )
         

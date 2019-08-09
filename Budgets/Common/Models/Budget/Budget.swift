@@ -21,7 +21,6 @@ struct Fund: Equatable, Hashable {
     let amount: Double
     let type: FundType
     let entries: [FundEntry]
-    //let imageName: String
 }
 
 extension Fund {
@@ -133,36 +132,3 @@ func !=(left: FundType, right: FundType) -> Bool {
         }
     }
 }
-
-
-
-
-/*
- Budget
- - startDate
- - endDate
- - monthName
- - income: [Fund]
- - expenses: [Fund]
- 
- Fund
- - type: FundType
- - Name
- - Amount
- - Image name
- - entries [FundEnity]
- - Total amount: calculated var from amount + entire.map { $0.amount }.reduce(+)
- 
- FundType
- Case income
- case recurring
- Case normal
- Case saving
- 
- 
- FundEntry
- - date
- - amount
- - description
- 
- */

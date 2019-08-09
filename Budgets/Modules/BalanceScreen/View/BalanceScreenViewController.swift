@@ -35,7 +35,15 @@ class BalanceScreenViewController: UIViewController {
     private func initialViewSetup() {
         self.view.addSubview(pageControl)
     }
-
+    
+    @IBAction func plusButtonTapped(_ sender: Any) {
+        self.presenter?.handle(event: .addEntryButtonTapped(.plus))
+    }
+    
+    @IBAction func minusButtonTapped(_ sender: Any) {
+        self.presenter?.handle(event: .addEntryButtonTapped(.minus))
+    }
+    
 }
 
 extension BalanceScreenViewController: BalanceScreenViewPresenterOutput {
@@ -79,4 +87,9 @@ extension BalanceScreenViewController {
     private func updatePageProgress(index: Int) {
         pageControl.set(progress: index, animated: true)
     }
+}
+
+enum AddEntryButtonType {
+    case plus
+    case minus
 }

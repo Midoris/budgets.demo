@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +26,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="round_remove_circle_outline_white_48pt"/>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="VKb-uP-nyf" eventType="touchUpInside" id="XGc-Gx-3UF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFA-uZ-RHc">
                                 <rect key="frame" x="36" y="559" width="72" height="72"/>
@@ -35,6 +38,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="round_add_circle_outline_white_48pt"/>
+                                <connections>
+                                    <action selector="plusButtonTapped:" destination="VKb-uP-nyf" eventType="touchUpInside" id="OyM-Ot-FwQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BV-in-3hH">
                                 <rect key="frame" x="16" y="44" width="343" height="39"/>
@@ -122,9 +128,93 @@
             </objects>
             <point key="canvasLocation" x="1061" y="-569"/>
         </scene>
+        <!--Balance Entry View Controller-->
+        <scene sceneID="vv0-Sq-dnK">
+            <objects>
+                <viewController storyboardIdentifier="BalanceEntryViewController" id="8AE-xU-Gxz" customClass="BalanceEntryViewController" customModule="Budgets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sac-yt-ypp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYw-HI-VVJ">
+                                <rect key="frame" x="319" y="94" width="40" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-7p-Vrr">
+                                <rect key="frame" x="292" y="117.5" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="▾ Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRU-1b-n5C">
+                                <rect key="frame" x="16" y="94" width="47" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d22-d8-ggd">
+                                <rect key="frame" x="16" y="117.5" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button ▾">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EUR" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DU4-9Y-MQf">
+                                <rect key="frame" x="16" y="215.5" width="343" height="120"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="b5H-CA-pTR"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="82"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWG-xd-0Ke">
+                                <rect key="frame" x="79.5" y="44" width="216" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Wed, 10. July 2019, 11:04 ▾">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waN-SM-z4H">
+                                <rect key="frame" x="16" y="359.5" width="105" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Description ▾">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.60392156860000001" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="DU4-9Y-MQf" firstAttribute="leading" secondItem="Xgs-he-BVC" secondAttribute="leading" constant="16" id="1Io-Jp-tFj"/>
+                            <constraint firstItem="Xgs-he-BVC" firstAttribute="trailing" secondItem="h8U-7p-Vrr" secondAttribute="trailing" constant="16" id="2p0-pr-aRs"/>
+                            <constraint firstItem="IRU-1b-n5C" firstAttribute="leading" secondItem="Xgs-he-BVC" secondAttribute="leading" constant="16" id="BY4-II-QTO"/>
+                            <constraint firstItem="Xgs-he-BVC" firstAttribute="trailing" secondItem="dYw-HI-VVJ" secondAttribute="trailing" constant="16" id="Cg3-zt-fVu"/>
+                            <constraint firstItem="OWG-xd-0Ke" firstAttribute="centerX" secondItem="sac-yt-ypp" secondAttribute="centerX" id="HVk-Af-otq"/>
+                            <constraint firstItem="OWG-xd-0Ke" firstAttribute="top" secondItem="Xgs-he-BVC" secondAttribute="top" constant="24" id="Ice-r7-gMx"/>
+                            <constraint firstItem="waN-SM-z4H" firstAttribute="top" secondItem="DU4-9Y-MQf" secondAttribute="bottom" constant="24" id="Pae-dv-qhD"/>
+                            <constraint firstItem="DU4-9Y-MQf" firstAttribute="top" secondItem="d22-d8-ggd" secondAttribute="bottom" constant="64" id="Qwm-Cw-nps"/>
+                            <constraint firstItem="waN-SM-z4H" firstAttribute="leading" secondItem="Xgs-he-BVC" secondAttribute="leading" constant="16" id="QzU-rc-rGo"/>
+                            <constraint firstItem="h8U-7p-Vrr" firstAttribute="top" secondItem="dYw-HI-VVJ" secondAttribute="bottom" constant="4" id="Uah-s1-ZGB"/>
+                            <constraint firstItem="dYw-HI-VVJ" firstAttribute="centerY" secondItem="IRU-1b-n5C" secondAttribute="centerY" id="Z9l-J1-eXx"/>
+                            <constraint firstItem="IRU-1b-n5C" firstAttribute="top" secondItem="OWG-xd-0Ke" secondAttribute="bottom" constant="16" id="cBb-ul-Oeb"/>
+                            <constraint firstItem="d22-d8-ggd" firstAttribute="top" secondItem="IRU-1b-n5C" secondAttribute="bottom" constant="4" id="glM-BA-CnE"/>
+                            <constraint firstItem="d22-d8-ggd" firstAttribute="leading" secondItem="Xgs-he-BVC" secondAttribute="leading" constant="16" id="lh1-tR-27z"/>
+                            <constraint firstItem="Xgs-he-BVC" firstAttribute="trailing" secondItem="DU4-9Y-MQf" secondAttribute="trailing" constant="16" id="nKQ-IB-1sS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xgs-he-BVC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bC1-0y-4z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.79999999999995" y="163.26836581709148"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="round_add_circle_outline_white_48pt" width="96" height="96"/>
-        <image name="round_remove_circle_outline_white_48pt" width="96" height="96"/>
+        <image name="round_add_circle_outline_white_48pt" width="48" height="48"/>
+        <image name="round_remove_circle_outline_white_48pt" width="48" height="48"/>
     </resources>
 </document>

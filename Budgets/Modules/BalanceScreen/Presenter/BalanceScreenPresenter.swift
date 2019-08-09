@@ -17,6 +17,7 @@ protocol BalanceScreenPresenterInput: class {
 
 enum BalanceScreenVCEvent {
     case viewDidLoad
+    case addEntryButtonTapped(AddEntryButtonType)
 }
 
 class BalanceScreenPresenter {
@@ -42,6 +43,9 @@ extension BalanceScreenPresenter: BalanceScreenPresenterInput {
     func handle(event: BalanceScreenVCEvent) {
         switch event {
         case .viewDidLoad: self.handleViewDidLoad()
+        case .addEntryButtonTapped(let type):
+            self.router.handle(route: .balanceEntryScreen(type))
+            
         }
     }
 }

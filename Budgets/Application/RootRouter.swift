@@ -21,26 +21,22 @@ class RootRouter: RootRouterProtocol {
         let budgetsRouter = BudgetsScreenBuilder().setupModule()
         let budgetsController = budgetsRouter.viewController ?? UIViewController()
         budgetsController.title = "Budgets"
-        budgetsController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.bookmarks, tag: 0)
+        let budgetsIcon = UIImage(named: "baseline_pie_chart_black_24pt")
+        budgetsController.tabBarItem = UITabBarItem(title: "Budgets", image: budgetsIcon, selectedImage: budgetsIcon)
         let budgetsNavController = UINavigationController(rootViewController: budgetsController)
         
         let balanceRouter = BalanceScreenBuilder().setupModule()
         let balanceController = balanceRouter.viewController ?? UIViewController()
         balanceController.title = "Balance"
-        balanceController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-        let balanceNavController = UINavigationController(rootViewController: balanceController)
+        let balanceIcon = UIImage(named: "baseline_account_balance_wallet_black_24pt")
+        balanceController.tabBarItem = UITabBarItem(title: "Balance", image: balanceIcon, selectedImage: balanceIcon)
         
         let historyRouter = HistoryScreenBuilder().setupModule()
         let historyController = historyRouter.viewController ?? UIViewController()
         historyController.title = "History"
-        historyController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        let historyIcon = UIImage(named: "baseline_history_black_24pt")
+        historyController.tabBarItem = UITabBarItem(title: "History", image: historyIcon, selectedImage: historyIcon)
         let historyNavController = UINavigationController(rootViewController: historyController)
-        
-//        let historyVC = ViewController()
-//        historyVC.title = "History"
-//        historyVC.view.backgroundColor = UIColor.cyan
-//
-//        historyVC.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         
         let controllers = [budgetsNavController, balanceController,  historyNavController]
         
